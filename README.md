@@ -1,1 +1,1 @@
-# CS | Blogs, FSQs, Tips & Tricks
+# CS | Blogs, FSQs, Tips & Tricks, Notes
