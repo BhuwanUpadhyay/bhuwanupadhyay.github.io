@@ -1,0 +1,29 @@
+{
+  "name": "hexo-site",
+  "version": "0.0.0",
+  "private": true,
+  "hexo": {
+    "version": "5.4.0"
+  },
+  "scripts": {
+    "build": "hexo generate",
+    "clean": "hexo clean",
+    "deploy": "hexo deploy",
+    "start": "hexo server"
+  },
+  "dependencies": {
+    "bulma-stylus": "0.8.0",
+    "hexo": "^5.0.2",
+    "hexo-algolia": "^1.3.1",
+    "hexo-deployer-git": "^2.0.0",
+    "hexo-filter-github-emojis": "^2.1.0",
+    "hexo-generator-archive": "^1.0.0",
+    "hexo-generator-index": "^2.0.0",
+    "hexo-generator-tag": "^1.0.0",
+    "hexo-renderer-inferno": "^0.1.3",
+    "hexo-renderer-marked": "^3.0.0",
+    "hexo-renderer-stylus": "^2.0.0",
+    "hexo-server": "^2.0.0",
+    "hexo-theme-icarus": "^4.4.0"
+  }
+}

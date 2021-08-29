@@ -1,0 +1,104 @@
+# Hexo Configuration
+## Docs: http://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: CS | Blogs, FSQs, Tips & Tricks
+keywords: >-
+  Java, Kotlin, Angular, Spring Boot, Spring Cloud, AWS, Microservices, Blockchain, Domain Driven Design, Cloud Native Application, Software Design, Coding Problems
+subtitle:
+description: >-
+  Enthusiastic software engineer with 6+ years of experience participating in the complete product development lifecycle of successfully launched applications. Hands-on professional experience in Java, Kotlin, Spring, Hibernate/JPA, Angular, Blockchain, AWS, Microservices, Kubernetes. In previous roles, migrated monolithic applications into microservices, developed greenfield products using cloud-native and microservice architecture, refactored code base to increase maintainability, and resolved a performance bottleneck that increased application performance. Always determined to make substantial impacts in the future.
+author: Bhuwan Prasad Upadhyay
+language: en
+timezone: Asia/Kathmandu
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: https://bhuwanupadhyay.github.io
+root: ''
+permalink: :year/:month/:post_title/
+permalink_defaults:
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+  - "*admin/*"
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: # Open external links in new tab
+  enable: true
+  field: post
+filename_case: 0
+render_drafts: false
+post_asset_folder: true
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  tab_replace:
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+updated_option: 'empty'
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 10
+pagination_dir: page
+
+index_generator:
+  per_page: 10
+
+archive_generator:
+  per_page: 20
+  yearly: true
+  monthly: true
+
+category_generator:
+  per_page: 10
+
+tag_generator:
+  per_page: 10
+
+# Extensions
+## Plugins: https://github.com/hexojs/hexo/wiki/Plugins
+## Themes: https://github.com/hexojs/hexo/wiki/Themes
+theme: icarus
+
+# Deployment
+## Docs: http://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repository: https://github.com/bhuwanupadhyay/bhuwanupadhyay.github.io.git
+  branch: gh-pages
+
+marked:
+  gfm: false
+
+githubEmojis:
+  className: not-gallery-item
+
+algolia:
+  applicationID: U9NUTRVPBB
+  apiKey: 1ce626e3c7cd2abf4e3851acd1a53899
+  indexName: zbytes
