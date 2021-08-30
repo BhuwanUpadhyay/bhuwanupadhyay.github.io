@@ -99,6 +99,3 @@ githubEmojis:
   className: not-gallery-item
 
 algolia: null
-#  applicationID: U9NUTRVPBB
-#  apiKey: 1ce626e3c7cd2abf4e3851acd1a53899
-#  indexName: zbytes

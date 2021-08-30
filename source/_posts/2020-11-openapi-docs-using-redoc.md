@@ -97,7 +97,7 @@ openapi/
 ┣ README.md
 ┗ openapi.yaml
 ```
-In the main [openapi yaml](https://raw.githubusercontent.com/zbytes/openapi-docs-using-redoc/main/openapi/openapi.yaml) file we just need to link our separate definitions with API paths.
+In the main [openapi yaml](https://raw.githubusercontent.com/bhuwanupadhyay/codes/main/openapi-docs-using-redoc/openapi.yaml) file we just need to link our separate definitions with API paths.
 
 ```yaml
 paths:
@@ -114,7 +114,7 @@ paths:
 > _**Why multiple files and folders?**_
 >
 > If you don't use multiple files and folders structure to manage definitions then
-> you will end with the big file like [dist.yaml](https://raw.githubusercontent.com/zbytes/openapi-docs-using-redoc/main/dist.yaml).
+> you will end with the big file like [dist.yaml](https://raw.githubusercontent.com/bhuwanupadhyay/codes/main/openapi-docs-using-redoc/dist.yaml).
 > After looking at it, you might think it is not bad but this is a demo which has only 8 APIs
 > which may not be in a real-world application. You might have 50 or 100 APIs then you will face the real problem of managing single file
 > so that I recommend multiple files and folder structure to manage API definition.
@@ -142,7 +142,7 @@ npm run build
 npm run start
 ```
 
-### 5. Source Code > [Github Link](https://github.com/zbytes/openapi-docs-using-redoc)
+### 5. Source Code > [Github Link](https://github.com/bhuwanupadhyay/codes/tree/main/openapi-docs-using-redoc)
 
 ## Conclusion
 

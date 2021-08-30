@@ -34,13 +34,13 @@ openapi-generator-cli version-manager set 4.3.1
 
 ### 2. Project Setup
 
-Before writing the code we need to agree on our service API. In this demo, I used the definition that I published in my previous [article](https://medium.com/zbytes/openapi-docs-using-redoc-dbdad66bff10) which specification located in [github.com/zbytes](https://raw.githubusercontent.com/zbytes/openapi-docs-using-redoc/main/dist.yaml).
+Before writing the code we need to agree on our service API. In this demo, I used the definition that I published in my previous [article](https://bhuwanupadhyay.github.io/2020/11/openapi-docs-using-redoc/) which specification located in [github.com/bhuwanupadhyay/codes](https://raw.githubusercontent.com/bhuwanupadhyay/codes/main/openapi-docs-using-redoc/dist.yaml).
 
 Open the terminal where you want to generate code and run the following command to save the specification.
 
 ```bash
 wget \
- https://raw.githubusercontent.com/zbytes/openapi-docs-using-redoc/main/dist.yaml \
+ https://raw.githubusercontent.com/bhuwanupadhyay/codes/main/openapi-docs-using-redoc/dist.yaml \
  -O openapi.yaml
 ```
 
@@ -50,8 +50,8 @@ I used the following configuration of code generation where you can modify accor
 generatorName: 'spring'
 groupId: 'io.github.bhuwanupadhyay'
 artifactId: 'spring-boot-using-openapi-code-generation'
-apiPackage: 'io.github.zbytes.demo.interfaces.rest'
-modelPackage: 'io.github.zbytes.demo.interfaces.rest.dto'
+apiPackage: 'io.github.bhuwanupadhyay.demo.interfaces.rest'
+modelPackage: 'io.github.bhuwanupadhyay.demo.interfaces.rest.dto'
 artifactVersion: '1.0.0'
 library: 'spring-boot'
 inputSpec: 'openapi.yaml'
@@ -157,7 +157,7 @@ There are the following advantages of generated code from the specification.
 - Better control of the API interface code.
 - Remove overhead of maintaining POJOs.
 
-### 5. Source Code > [Github Link](https://github.com/zbytes/spring-boot-using-openapi-code-generation)
+### 5. Source Code > [Github Link](https://github.com/bhuwanupadhyay/codes/tree/main/spring-boot-using-openapi-code-generation)
 
 ## Conclusion
 
