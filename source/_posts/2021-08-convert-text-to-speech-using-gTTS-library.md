@@ -41,18 +41,22 @@ import os
 from gtts import gTTS
 from playsound import playsound
 
+outputFile='helloGTTS.mp3'
+
 # convert text to speech
 helloTxt="Hello Everyone! This is Bhuwan Prasad Upadhyay! Welcome to Convert Text To Speech using GTTS Library"
 language='en'
 helloGTTS=gTTS(text=helloTxt,lang=language,slow=False)
-if os.path.exists("helloGTTS.mp3"):
-  os.remove("helloGTTS.mp3")
+if os.path.exists(outputFile):
+  os.remove(outputFile)
 else:
   print("The file does not exist")
-helloGTTS.save("helloGTTS.mp3")
+
+# write mp3 file  
+helloGTTS.save(outputFile)
 
 # play mp3
-playsound("helloGTTS.mp3")
+playsound(outputFile)
 ```
 
 To run:
@@ -72,8 +76,11 @@ import os
 from gtts import gTTS
 from playsound import playsound
 
+inputFile='paper.pdf'
+outputFile='pdfGTTS.mp3'
+
 # read pdf as string
-pdf = PyPDF2.PdfFileReader(str('paper.pdf'))
+pdf = PyPDF2.PdfFileReader(str(inputFile))
 buf = io.StringIO()
 for page in pdf.pages:
     buf.write(page.extractText())
@@ -84,16 +91,16 @@ language='en'
 pdfGTTS=gTTS(text=pdfTxt,lang=language,slow=False)
 
 # delete if file exits
-if os.path.exists("pdfGTTS.mp3"):
-  os.remove("pdfGTTS.mp3")
+if os.path.exists(outputFile):
+  os.remove(outputFile)
 else:
   print("The file does not exist")
 
 # write mp3 file  
-pdfGTTS.save("pdfGTTS.mp3")
+pdfGTTS.save(outputFile)
 
 # play mp3
-playsound("pdfGTTS.mp3")
+playsound(outputFile)
 ```
 
 To run:
