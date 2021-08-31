@@ -63,7 +63,7 @@ playsound("helloGTTS.mp3")
 
 ## Convert PDF Text to Speech: `pdfTxt.py`
 
-```
+```python
 # import dependencies
 import io
 import PyPDF2
