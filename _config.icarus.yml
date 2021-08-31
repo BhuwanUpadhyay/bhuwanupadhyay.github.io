@@ -172,10 +172,10 @@ comment:
 #         qrcode: ''
 # Share plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Share/
-share: null
-#  type: sharethis
-#  # URL to the ShareThis share plugin script
-#  install_url: //platform-api.sharethis.com/js/sharethis.js#property=5b6b2dda896373001140514c&product=inline-share-buttons
+share:
+ type: sharethis
+ # URL to the ShareThis share plugin script
+ install_url: //platform-api.sharethis.com/js/sharethis.js#property=612de0d0ffbeba0012edaa19&product=inline-share-buttons
 # Sidebar configurations.
 # Please be noted that a sidebar is only visible when it has at least one widget
 sidebar:
@@ -301,24 +301,24 @@ plugins:
     web_id:
   # Alerting users about the use of cookies
   # https://www.osano.com/cookieconsent/
-  cookie_consent: null
-#    # The compliance type. Can be "info", "opt-in", or "opt-out"
-#    type: info
-#    # Theme of the popup. Can be "block", "edgeless", or "classic"
-#    theme: edgeless
-#    # Whether the popup should stay static regardless of the page scrolls
-#    static: false
-#    # Where on the screen the consent popup should display
-#    position: bottom-left
-#    # URL to your site's cookie policy
-#    policyLink: 'https://www.cookiesandyou.com/'
+  cookie_consent:
+    # The compliance type. Can be "info", "opt-in", or "opt-out"
+    type: info
+    # Theme of the popup. Can be "block", "edgeless", or "classic"
+    theme: edgeless
+    # Whether the popup should stay static regardless of the page scrolls
+    static: false
+    # Where on the screen the consent popup should display
+    position: bottom-left
+    # URL to your site's cookie policy
+    policyLink: 'https://www.cookiesandyou.com/'
   # Enable the lightGallery and Justified Gallery plugins
   gallery: true
   # Google Analytics plugin settings
   # https://analytics.google.com
   google_analytics:
     # Google Analytics tracking ID
-    tracking_id: G-8BSM38C420
+    tracking_id: UA-177390945-1
   # Hotjar user feedback plugin
   # https://www.hotjar.com/
   hotjar:
