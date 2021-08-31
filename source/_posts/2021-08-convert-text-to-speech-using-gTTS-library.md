@@ -18,24 +18,18 @@ How to Convert text to speech using Google Text-to-Speech (gTTS) library?
 
 > gTTS (Google Text-to-Speech), a Python library and CLI tool to interface with Google Translate’s > text-to-speech API. Writes spoken mp3 data to a file, a file-like object (bytestring) for further > audio manipulation, or stdout. It features flexible pre-processing and tokenizing. [Read More](https://gtts.readthedocs.io/en/latest/)
 
-## Installation
-
-```bash
-pip install gTTS
-```
-
-Verify command
-
-```bash
-gtts-cli --all
-```
-
 ## Python: `requirements.txt`
 
 ```
 gTTS==2.2.3
 playsound==1.3.0
 PyPDF2==1.26.0
+```
+
+## Installation
+
+```bash
+pip install -r requirements.txt
 ```
 
 ## Convert Text to Speech: `helloTxt.py`
@@ -96,6 +90,6 @@ pdfGTTS.save("pdfGTTS.mp3")
 playsound("pdfGTTS.mp3")
 ```
 
-# Github Source Code 
+---
 
-[Github Link](https://github.com/bhuwanupadhyay/codes/tree/main/convert-text-to-speech-using-gTTS-library)
+### (Source Code)(https://github.com/bhuwanupadhyay/codes/tree/main/convert-text-to-speech-using-gTTS-library)
