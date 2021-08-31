@@ -55,6 +55,12 @@ helloGTTS.save("helloGTTS.mp3")
 playsound("helloGTTS.mp3")
 ```
 
+To run:
+
+```bash
+python3 helloTxt.py
+```
+
 ## Convert PDF Text to Speech: `pdfTxt.py`
 
 ```python
@@ -88,6 +94,12 @@ pdfGTTS.save("pdfGTTS.mp3")
 
 # play mp3
 playsound("pdfGTTS.mp3")
+```
+
+To run:
+
+```bash
+python3 pdfTxt.py
 ```
 
 ---
