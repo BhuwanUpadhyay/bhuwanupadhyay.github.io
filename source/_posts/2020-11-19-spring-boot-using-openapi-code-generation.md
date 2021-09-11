@@ -1,7 +1,7 @@
 ---
 title: Spring Boot App Using Java Code Generated From OpenAPI
-date: 2020-11-19 01:31:55
-cover: /gallery/media/spring-boot-using-openapi-code-generation.png
+date: 2020-11-19T10:08:22.921Z
+cover: /images/spring-boot-using-openapi-code-generation.png
 categories:
 - OpenAPI
 - Spring Boot

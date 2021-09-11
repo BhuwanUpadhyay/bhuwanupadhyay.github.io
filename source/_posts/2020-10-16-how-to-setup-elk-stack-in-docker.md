@@ -1,6 +1,6 @@
 ---
 title: How to setup elk stack in docker
-cover: /gallery/media/fsqs-tips-tricks-notes.png
+cover: /images/fsqs-tips-tricks-notes.png
 date: 2020-10-16T10:08:22.921Z
 categories:
   - ELK

@@ -1,6 +1,6 @@
 ---
 title: Graceful shutdown in Spring Boot
-cover: /gallery/media/fsqs-tips-tricks-notes.png
+cover: /images/fsqs-tips-tricks-notes.png
 date: 2020-09-03T10:08:22.921Z
 categories:
   - Spring Boot

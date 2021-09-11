@@ -1,6 +1,6 @@
 ---
 title: Create and upload custom server certificate in AWS IAM
-cover: /gallery/media/2021-08-create-and-upload-custom-server-certificate-in-aws-iam.png
+cover: /images/2021-08-create-and-upload-custom-server-certificate-in-aws-iam.png
 date: 2021-08-10T10:08:22.921Z
 categories:
   - AWS

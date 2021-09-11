@@ -1,7 +1,7 @@
 ---
 title: OpenAPI Docs Using ReDoc
-date: 2020-11-25 01:31:55
-cover: /gallery/media/openapi-docs-using-redoc.png
+date: 2020-11-25T10:08:22.921Z
+cover: /images/openapi-docs-using-redoc.png
 categories:
 - OpenAPI
 - ReDoc
@@ -49,7 +49,7 @@ create-openapi-repo
 
 _**Example:**_
 
-![](/gallery/media/openapi-docs-using-redoc-1.png)
+![](/images/openapi-docs-using-redoc-1.png)
 
 ### 3. Defining APIs
 

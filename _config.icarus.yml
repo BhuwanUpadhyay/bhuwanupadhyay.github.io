@@ -3,11 +3,11 @@ version: 4.0.0
 # Icarus theme variant, can be "default" or "cyberpunk"
 variant: default
 # Path or URL to the website's logo
-logo: /img/bhuwan.png
+logo: /images/bhuwan.png
 # Page metadata configurations
 head:
   # URL or path to the website's icon
-  favicon: /img/bhuwan.png
+  favicon: /images/bhuwan.png
   # Web application manifests configuration
   # https://developer.mozilla.org/en-US/docs/Web/Manifest
   manifest:
@@ -201,7 +201,7 @@ widgets:
     # Author's current location
     location: Kathmandu, Nepal
     # URL or path to the avatar image
-    avatar: /img/bhuwan.png
+    avatar: /images/bhuwan.png
     # Whether show the rounded avatar image
     avatar_rounded: false
     # Email address for the Gravatar
