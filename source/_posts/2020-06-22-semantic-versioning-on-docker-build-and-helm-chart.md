@@ -1,7 +1,7 @@
 ---
 title: Semantic versioning on docker build and helm chart
 date: 2020-06-22 16:10:00 Z
-categories: [SemanticVersioning]
+categories: [Semantic Versioning]
 tags: [helm, docker, semantic-versioning]
 cover: /images/fsqs-tips-tricks-notes.png
 ---
