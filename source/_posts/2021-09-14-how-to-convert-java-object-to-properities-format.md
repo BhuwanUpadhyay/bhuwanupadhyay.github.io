@@ -37,7 +37,7 @@ public class PropsUtils {
      * @param <T>
      * @return
      */
-    public <T> Map<String, String> toProperties(T object) {
+    public <T> Map<String, String> toProperties(T object) throws IOException {
         JavaPropsMapper mapper = JavaPropsMapper.builder().build();
         JavaPropsSchema javaPropsSchema = JavaPropsSchema.emptySchema().withWriteIndexUsingMarkers(true);
         return mapper.writeValueAsMap(entity, javaPropsSchema);
@@ -52,7 +52,7 @@ public class PropsUtils {
      * @param <T>
      * @return
      */
-    public <T> Map<String, String> toPropertiesOnlyFields(T object) {
+    public <T> Map<String, String> toPropertiesOnlyFields(T object) throws IOException {
         JavaPropsMapper mapper = JavaPropsMapper.builder()
                 .visibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY)
                 .visibility(PropertyAccessor.GETTER, JsonAutoDetect.Visibility.NONE)
