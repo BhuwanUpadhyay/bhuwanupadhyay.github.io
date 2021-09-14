@@ -22,7 +22,7 @@ implementation 'com.google.zxing:javase:3.4.1'
 implementation 'com.itextpdf:itextpdf:5.5.13.2'
 ```
 
-## Java Object To Properties Map
+## Add QR Code on PDF using Java
 
 ```java
 public class PdfUtils {
