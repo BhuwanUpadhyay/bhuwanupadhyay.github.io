@@ -10,7 +10,7 @@ tags:
   - java
 ---
 
-How to convert java object to properties format?
+How to add QR code on pdf using java?
 
 <!-- more -->
 
