@@ -1,7 +1,7 @@
 ---
 title: Find the longest palindromic contiguous substring
 date: 2020-03-20 10:57:00 Z
-categories: [CodingProblems]
+categories: [Coding Problems]
 tags: [interview, algorithms]
 cover: /images/coding-problems.png
 ---

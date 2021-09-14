@@ -2,7 +2,7 @@
 title: SSL in spring boot application
 cover: /images/fsqs-tips-tricks-notes.png
 date: 2020-07-06T10:08:22.921Z
-categories: [SpringBoot]
+categories: [Spring Boot]
 tags: [ssl, wireshark]
 ---
 
@@ -118,7 +118,7 @@ The tools like [OpenSSL](https://www.openssl.org/), [Keytool](https://docs.oracl
 
 ```bash
 keytool -genkey \
-          -alias springboot \
+          -alias Spring Boot \
           -storetype PKCS12 \
           -keyalg RSA \
           -keysize 2048 \
@@ -141,7 +141,7 @@ server.port=8443
 server.ssl.key-store=classpath:keystore.p12
 server.ssl.key-store-password=mypass
 server.ssl.keyStoreType=PKCS12
-server.ssl.keyAlias=springboot
+server.ssl.keyAlias=Spring Boot
 ```
 
 Again, you need to start the application for this simply run the command: `mvn spring-boot:run -Dspring-boot.run.profiles=ssl` and verify with the command: `http --verify=no https://localhost:8443/actuator/health`.

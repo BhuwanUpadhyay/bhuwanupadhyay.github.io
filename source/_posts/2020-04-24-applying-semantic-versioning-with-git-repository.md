@@ -1,7 +1,7 @@
 ---
 title: Applying semantic versioning with git repository
 date: 2020-04-24 15:35:00 Z
-categories: [SemanticVersioning]
+categories: [Semantic Versioning]
 tags: [git, semantic-release]
 cover: /images/applying-semantic-versioning-with-git-repository/featured.png
 ---

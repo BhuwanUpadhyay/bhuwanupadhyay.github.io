@@ -1,7 +1,7 @@
 ---
 title: Safely Exchanging Information Across Microservices
 date: 2020-05-09T10:08:22.921Z
-categories: [SpringCloud]
+categories: [Spring Cloud]
 tags: [spring-cloud-stream, avro-schema, schema-registry]
 cover: https://github.com/bhuwanupadhyay/safely-exchanging-information-across-microservices/raw/master/assets/featured.png
 ---
@@ -42,7 +42,7 @@ To use Spring Cloud Schema Registry Server in a Maven [Spring Boot](https://star
 To enable schema registry server in spring boot, we need to use the annotation `@EnableSchemaRegistryServer` on the main application class:
 
 ```java
-@SpringBootApplication
+@Spring BootApplication
 @EnableSchemaRegistryServer
 public class SchemaRegistryApplication {
 
@@ -72,7 +72,7 @@ To use Spring Cloud Schema Registry Client in a Maven [Spring Boot](https://star
 To enable schema registry client in spring boot, we need to use the annotation `@EnableSchemaRegistryCLient` on the main application class:
 
 ```java
-@SpringBootApplication
+@Spring BootApplication
 @EnableSchemaRegistryClient
 public class OrderServiceApplication {
 

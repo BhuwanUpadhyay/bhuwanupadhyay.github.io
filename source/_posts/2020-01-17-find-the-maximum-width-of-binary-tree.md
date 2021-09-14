@@ -1,7 +1,7 @@
 ---
 title: Find the maximum width of binary tree
 date: 2020-01-17T10:08:22.921Z
-categories: [CodingProblems]
+categories: [Coding Problems]
 tags: [binary-tree, maximum-width]
 cover: /images/find-the-maximum-width-of-binary-tree/featured.png
 ---

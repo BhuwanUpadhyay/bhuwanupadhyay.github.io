@@ -1,7 +1,7 @@
 ---
 title: How to create binary tree in Java
 date: 2020-01-05T10:08:22.921Z
-categories: [CodingProblems]
+categories: [Coding Problems]
 tags: [binary-tree]
 cover: /images/how-to-create-binary-tree-in-java/featured.png
 ---

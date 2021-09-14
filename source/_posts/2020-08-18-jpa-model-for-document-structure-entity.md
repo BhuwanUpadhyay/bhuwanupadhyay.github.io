@@ -148,7 +148,7 @@ spring.jpa.hibernate.naming.implicit-strategy=org.hibernate.boot.model.naming.Im
 ## Step 4: Usage
 
 ```java
-@SpringBootApplication
+@Spring BootApplication
 @EnableJpaRepositories(considerNestedRepositories = true)
 @Slf4j
 public class JPAModelForDocumentStructureEntity {

@@ -1,7 +1,7 @@
 ---
 title: Domain-Driven Design Building Blocks
 date: 2020-05-02 15:23:26 Z
-categories: [Domain-Driven-Design]
+categories: [Domain Driven Design]
 tags: [value-object, entity, aggregate-root, repository, factory, domain-service]
 cover: https://raw.githubusercontent.com/BhuwanUpadhyay/ddd-building-blocks/master/assets/featured.png
 ---

@@ -1,7 +1,7 @@
 ---
 title: Merge sort
 date: 2020-03-21 02:26:00 Z
-categories: [CodingProblems]
+categories: [Coding Problems]
 tags: [merge-sort, algorithms]
 cover: /images/fsqs-tips-tricks-notes.png
 ---

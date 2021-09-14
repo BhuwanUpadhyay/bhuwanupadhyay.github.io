@@ -2,7 +2,7 @@
 title: RSocket with Spring Boot
 cover: /images/fsqs-tips-tricks-notes.png
 date: 2020-08-17T10:08:22.921Z
-categories: [SpringBoot]
+categories: [Spring Boot]
 tags: [rsocket]
 ---
 

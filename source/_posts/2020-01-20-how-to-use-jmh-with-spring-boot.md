@@ -1,7 +1,7 @@
 ---
 title: How to use jmh with spring boot
 date: 2020-01-20T10:08:22.921Z
-categories: [SpringBoot]
+categories: [Spring Boot]
 tags: [jmh]
 cover: /images/how-to-use-jmh-with-spring-boot/featured.png
 ---
@@ -85,7 +85,7 @@ spring.jpa.hibernate.ddl-auto=create-drop
 Let's benchmark insert operation for `OrderLine` entity into database.
 
 ```java
-@SpringBootTest
+@Spring BootTest
 @State(Scope.Benchmark)
 @BenchmarkMode(Mode.AverageTime)
 @OutputTimeUnit(TimeUnit.MILLISECONDS)

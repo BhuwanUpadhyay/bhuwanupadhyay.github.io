@@ -1,7 +1,7 @@
 ---
 title: Spring Boot Docker Containerization
 date: 2020-06-23T10:08:22.921Z
-categories: [SpringBoot]
+categories: [Spring Boot]
 tags: [docker, containerization]
 cover: /images/fsqs-tips-tricks-notes.png
 ---
@@ -29,7 +29,7 @@ curl https://start.spring.io/starter.tgz \
     -d dependencies=actuator,webflux \
     -d groupId=io.github.bhuwanupadhyay -d artifactId=$PRJ \
     -d packageName=io.github.bhuwanupadhyay.example \
-    -d applicationName=SpringBoot -d name="$NAME" -d description="$NAME" \
+    -d applicationName=Spring Boot -d name="$NAME" -d description="$NAME" \
     -d language=java -d platformVersion=2.3.1.RELEASE -d javaVersion=11 \
     -o demo.tgz && tar -xzvf demo.tgz && rm -rf demo.tgz
 ```
@@ -153,7 +153,7 @@ USER spring:spring
 COPY --from=builder /target/dependency/BOOT-INF/lib /app/lib
 COPY --from=builder /target/dependency/BOOT-INF/classes /app
 COPY --from=builder /target/dependency/META-INF /app
-ENTRYPOINT ["java", "-cp" , "app:app/lib/*", "io.github.bhuwanupadhyay.example.SpringBoot"]
+ENTRYPOINT ["java", "-cp" , "app:app/lib/*", "io.github.bhuwanupadhyay.example.Spring Boot"]
 ``` 
 
 A maven profile to build a docker image with plugins: `spring-boot-maven-plugin` and `dockerfile-maven-plugin`. 

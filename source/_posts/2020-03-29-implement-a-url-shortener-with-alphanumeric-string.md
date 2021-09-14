@@ -1,7 +1,7 @@
 ---
 title: Implement a URL shortener with alphanumeric string
 date: 2020-03-29 02:11:00 Z
-categories: [CodingProblems]
+categories: [Coding Problems]
 tags: [alphanumeric-random, algorithms]
 cover: /images/coding-problems.png
 ---

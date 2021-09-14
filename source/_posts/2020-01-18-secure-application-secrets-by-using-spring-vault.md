@@ -1,7 +1,7 @@
 ---
 title: Secure application secrets by using spring vault
 date: 2020-01-18T10:08:22.921Z
-categories: [SpringCloud]
+categories: [Spring Cloud]
 tags: [spring-cloud-vault, security]
 cover: /images/secure-application-secrets-by-using-spring-vault/featured.png
 ---
@@ -202,7 +202,7 @@ public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
 #### Test Scenario
 ```java
-@SpringBootTest
+@Spring BootTest
 class DemoApplicationTests {
 
     @Autowired

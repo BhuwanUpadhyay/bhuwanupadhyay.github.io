@@ -1,7 +1,7 @@
 ---
 title: Implement rand7 using rand5
 date: 2020-03-20 14:38:00 Z
-categories: [CodingProblems]
+categories: [Coding Problems]
 tags: [interview, algorithms]
 cover: /images/fsqs-tips-tricks-notes.png
 ---

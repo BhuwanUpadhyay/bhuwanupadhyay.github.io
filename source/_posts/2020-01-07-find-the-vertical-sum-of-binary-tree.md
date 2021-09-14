@@ -2,7 +2,7 @@
 title: Find the vertical sum of binary tree
 date: 2020-01-07T10:08:22.921Z
 categories:
-- CodingProblems
+- Coding Problems
 tags:
 - binary-tree
 cover: /images/find-the-vertical-sum-of-binary-tree/featured.png

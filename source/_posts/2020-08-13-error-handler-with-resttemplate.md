@@ -61,7 +61,7 @@ class OrderServiceClient {
     }
 }
 
-@SpringBootApplication
+@Spring BootApplication
 public class ErrorHandlerWithRestTemplate {
 
     private final OrderServiceClient orderServiceClient;

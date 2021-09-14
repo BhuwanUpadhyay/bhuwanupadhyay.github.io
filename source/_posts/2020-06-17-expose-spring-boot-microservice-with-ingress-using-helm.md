@@ -1,7 +1,7 @@
 ---
 title: Expose spring boot microservice with ingress using helm
 date: 2020-06-17 18:07:00 Z
-categories: [SpringBoot]
+categories: [Spring Boot]
 tags: [minikube, helm, ingress, kubernetes]
 cover: /images/fsqs-tips-tricks-notes.png
 ---
@@ -24,7 +24,7 @@ mkdir -p $PRJ && cd $PRJ && \
 curl https://start.spring.io/starter.tgz \
     -d dependencies=actuator,webflux \
     -d groupId=io.github.bhuwanupadhyay -d artifactId=$PRJ -d packageName=io.github.bhuwanupadhyay.example \
-    -d applicationName=SpringBoot -d name=$NAME -d description=$NAME \
+    -d applicationName=Spring Boot -d name=$NAME -d description=$NAME \
     -d language=kotlin -d platformVersion=2.3.1.RELEASE -d javaVersion=11 \
     -o demo.tgz && \
     tar -xzvf demo.tgz && rm -rf demo.tgz

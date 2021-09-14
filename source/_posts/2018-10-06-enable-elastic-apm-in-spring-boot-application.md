@@ -1,7 +1,7 @@
 ---
 title: Enable Elastic APM in Spring Boot Application
 date: 2018-10-06T10:08:22.921Z
-categories: [SpringBoot]
+categories: [Spring Boot]
 tags: [elastic-apm, monitoring]
 cover: /images/enable-elastic-apm-in-spring-boot-application/featured.png
 ---

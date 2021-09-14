@@ -26,7 +26,6 @@ How to convert java object to properties format?
 ## Java Object To Properties Map
 
 ```java
-
 public class PropsUtils {
 
     /**

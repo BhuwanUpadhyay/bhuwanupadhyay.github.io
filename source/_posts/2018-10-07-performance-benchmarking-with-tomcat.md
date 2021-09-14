@@ -1,7 +1,7 @@
 ---
 title: Performance Benchmarking with Tomcat
 date: 2018-10-07T10:08:22.921Z
-categories: [SpringBoot]
+categories: [Spring Boot]
 tags: [elastic-apm, tomcat, monitoring]
 cover: /images/performance-benchmarking-with-tomcat/featured.png
 ---
@@ -92,7 +92,7 @@ services:
       context: cicd/docker
       dockerfile: Dockerfile
       args:
-      - WAR_FILE=springboot-order-crud-service.war
+      - WAR_FILE=Spring Boot-order-crud-service.war
     ports:
     - 8000:8000
     - 8080:8080

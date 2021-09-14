@@ -1,7 +1,7 @@
 ---
 title: Configmap in Spring Cloud Kubernetes
 date: 2020-06-19 11:51:00 Z
-categories: [SpringCloud]
+categories: [Spring Cloud]
 tags: [helm, kubernetes, configmap]
 cover: /images/fsqs-tips-tricks-notes.png
 ---
@@ -30,7 +30,7 @@ mkdir -p $PRJ && cd $PRJ && \
 curl https://start.spring.io/starter.tgz \
     -d dependencies=actuator,webflux,cloud-starter,data-r2dbc,h2,postgresql \
     -d groupId=io.github.bhuwanupadhyay -d artifactId=$PRJ -d packageName=io.github.bhuwanupadhyay.example \
-    -d applicationName=SpringBoot -d name=$NAME -d description=$NAME \
+    -d applicationName=Spring Boot -d name=$NAME -d description=$NAME \
     -d language=kotlin -d platformVersion=2.3.1.RELEASE -d javaVersion=11 \
     -o demo.tgz && \
     tar -xzvf demo.tgz && rm -rf demo.tgz
@@ -118,7 +118,7 @@ To run `postgresql` in helm deployment you need to add dependency inside helm ch
 ```yaml
 dependencies:
   - name: postgresql
-    alias: springbootdb
+    alias: Spring Bootdb
     version: 8.10.5
     repository: https://charts.bitnami.com/bitnami
 ```
@@ -158,9 +158,9 @@ data:
     spring:
       profiles: prod
       r2dbc:
-        url: r2dbc:postgresql://{{ .Release.Name }}-springbootdb:5432/{{ .Values.springbootdb.postgresqlDatabase }}
-        username: {{ .Values.springbootdb.postgresqlUsername }}
-        password: {{ .Values.springbootdb.postgresqlPassword }}
+        url: r2dbc:postgresql://{{ .Release.Name }}-Spring Bootdb:5432/{{ .Values.Spring Bootdb.postgresqlDatabase }}
+        username: {{ .Values.Spring Bootdb.postgresqlUsername }}
+        password: {{ .Values.Spring Bootdb.postgresqlPassword }}
 ```
 
 ## Spring Cloud Kubernetes
@@ -261,7 +261,7 @@ helm dependency update src/helm-chart
 helm upgrade \
     --install -f src/helm-chart/values.yaml \
     --set spring.profiles.active=dev \
-    --set springbootdb.enabled=false \
+    --set Spring Bootdb.enabled=false \
     example-deployment src/helm-chart --force
 ```
 
@@ -270,11 +270,11 @@ helm upgrade \
 helm upgrade \
     --install -f src/helm-chart/values.yaml \
     --set spring.profiles.active=prod \
-    --set springbootdb.enabled=true \
-    --set springbootdb.postgresqlDatabase=orders-db \
-    --set springbootdb.postgresqlUsername=user \
-    --set springbootdb.postgresqlPassword=password \
-    --set springbootdb.persistence.enabled=false \
+    --set Spring Bootdb.enabled=true \
+    --set Spring Bootdb.postgresqlDatabase=orders-db \
+    --set Spring Bootdb.postgresqlUsername=user \
+    --set Spring Bootdb.postgresqlPassword=password \
+    --set Spring Bootdb.persistence.enabled=false \
     example-deployment src/helm-chart --force
 ```
 
@@ -298,7 +298,7 @@ kubectl get pods
 # Output
 NAME                                            READY   STATUS    RESTARTS   AGE
 example-deployment-helm-chart-8ff55d4db-rnt6j   1/1     Running   0          12m
-example-deployment-springbootdb-0               1/1     Running   0          12m
+example-deployment-Spring Bootdb-0               1/1     Running   0          12m
 
 # Port forward -> Run the following command
 

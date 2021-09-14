@@ -1,7 +1,7 @@
 ---
 title: Determine Time Complexity of Algorithms
 date: 2020-02-02T10:08:22.921Z
-categories: [CodingProblems]
+categories: [Coding Problems]
 tags: [time-complexity, algorithms]
 cover: /images/determine-time-complexity-of-algorithms/featured.png
 ---
