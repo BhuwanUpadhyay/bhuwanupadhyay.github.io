@@ -10,7 +10,7 @@ In k8s deployment, [ingress](https://kubernetes.io/docs/concepts/services-networ
 In this article, I will take you through how to expose spring boot microservice for the outside world in k8s deployment using ingress.
 <!-- more -->
 
-This example needs `kubectl` `minikube` `helm` command-line tools in your machine so for the setup you can see my previous note: [minikube setup and helm deployment]({{ site.baseurl }}/posts/minikube-setup-and-helm-deployment/).
+This example needs `kubectl` `minikube` `helm` command-line tools in your machine.
 
 ## Simple Spring Boot Microservice
 

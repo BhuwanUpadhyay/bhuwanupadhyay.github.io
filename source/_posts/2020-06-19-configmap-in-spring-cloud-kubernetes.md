@@ -15,7 +15,7 @@ which provides Spring Cloud common interface implementations that are easy to us
 In k8s deployment, [configmap](https://kubernetes.io/docs/concepts/configuration/configmap/) can be used as a source for application configuration properties.
 In this article, I will take you through how to use spring cloud Kubernetes to provide configuration properties for spring boot applications in k8s deployment using congfigmap.
 
-This example needs `kubectl` `minikube` `helm` command-line tools in your machine so for the setup you can see my previous note: [minikube setup and helm deployment]({{ site.baseurl }}/posts/minikube-setup-and-helm-deployment/).
+This example needs `kubectl` `minikube` `helm` command-line tools in your machine.
 
 ## Create Microservice
 
