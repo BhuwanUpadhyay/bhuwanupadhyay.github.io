@@ -14,10 +14,10 @@ How to split string in bash script?
 
 ## Split string in bash script
 
-For example, we want to extract aws region from docker repository url `225658775244.dkr.ecr.us-east-1.amazonaws.com`.
+For example, we want to extract aws region from docker repository url `account_id.dkr.ecr.us-east-1.amazonaws.com`.
 
 ```bash
-  docker_url=123232323.dkr.ecr.us-east-1.amazonaws.com
+  docker_url=account_id.dkr.ecr.us-east-1.amazonaws.com
   IFS='.'
   #Read the split words into an array based on comma delimiter
   read -a strarr <<<"$docker_url"
