@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>OpenAPI Docs Using ReDoc - CS | Blogs, FSQs, Tips &amp; Tricks, Notes</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#f7f7f7"><meta name="application-name" content="CS | Blogs, FSQs, Tips &amp; Tricks, Notes"><meta name="msapplication-TileImage" content="/img/favicon.ico"><meta name="msapplication-TileColor" content="#f7f7f7"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="CS | Blogs, FSQs, Tips &amp; Tricks, Notes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="How to use ReDoc for OpenAPI? In this blog post, I’m going to show you the practical way to use ReDoc for OpenAPI Documentation."><meta property="og:type" content="blog"><meta property="og:title" content="OpenAPI Docs Using ReDoc"><meta property="og:url" content="https://bhuwanupadhyay.github.io/2020/11/openapi-docs-using-redoc/"><meta property="og:site_name" content="CS | Blogs, FSQs, Tips &amp; Tricks, Notes"><meta property="og:description" content="How to use ReDoc for OpenAPI? In this blog post, I’m going to show you the practical way to use ReDoc for OpenAPI Documentation."><meta property="og:locale" content="en_US"><meta property="og:image" content="https://bhuwanupadhyay.github.io/images/openapi-docs-using-redoc.png"><meta property="article:published_time" content="2020-11-25T04:23:22.921Z"><meta property="article:author" content="Bhuwan Prasad Upadhyay"><meta property="article:tag" content="openapi"><meta property="article:tag" content="redoc"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/images/openapi-docs-using-redoc.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://bhuwanupadhyay.github.io/2020/11/openapi-docs-using-redoc/"},"headline":"OpenAPI Docs Using ReDoc","image":["https://bhuwanupadhyay.github.io/images/openapi-docs-using-redoc.png"],"datePublished":"2020-11-25T04:23:22.921Z","author":{"@type":"Person","name":"Bhuwan Prasad Upadhyay"},"publisher":{"@type":"Organization","name":"CS | Blogs, FSQs, Tips & Tricks, Notes","logo":{"@type":"ImageObject","url":"https://bhuwanupadhyay.github.io/img/logo.png"}},"description":"How to use ReDoc for OpenAPI? In this blog post, I’m going to show you the practical way to use ReDoc for OpenAPI Documentation."}</script><link rel="canonical" href="https://bhuwanupadhyay.github.io/2020/11/openapi-docs-using-redoc/"><link rel="icon" href="/img/favicon.ico"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/vs2015.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><script src="https://www.googletagmanager.com/gtag/js?id=UA-177390945-1" async></script><script>window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+    
+        gtag('config', 'UA-177390945-1');</script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css"><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-1-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="CS | Blogs, FSQs, Tips &amp; Tricks, Notes" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="View on GitHub" href="https://github.com/bhuwanupadhyay"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-12"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="/images/openapi-docs-using-redoc.png" alt="OpenAPI Docs Using ReDoc"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2020-11-25T04:23:22.921Z" title="11/25/2020, 4:23:22 AM">2020-11-25</time></span><span class="level-item"><a class="link-muted" href="/categories/OpenAPI/">OpenAPI</a><span> / </span><a class="link-muted" href="/categories/OpenAPI/ReDoc/">ReDoc</a></span><span class="level-item">5 minutes read (About 774 words)</span></div></div><h1 class="title is-3 is-size-4-mobile">OpenAPI Docs Using ReDoc</h1><div class="content"><p>How to use ReDoc for OpenAPI? In this blog post, I’m going to show you the practical way to use ReDoc for OpenAPI Documentation.</p>
+<span id="more"></span>
+
+<p>In recent times, <strong>Rest APIs</strong> are de-facto standards for client-server and service-to-service communication.</p>
+<p>As a business grows, the number of APIs also increases and, after some time it becomes very hard to manage API without using any comprehensive tool and standard. For this reason, the idea of OpenAPI came into the market and, which is a broadly adopted industry standard for describing modern APIs.</p>
+<p>The process of defining API is very simple in OpenAPI that just required a single file in <code>json</code> or <code>yaml</code> format, but once the number of API increases then real problems starting to appear in the development and maintenance of this single file.</p>
+<blockquote>
+<p>A clever person solves a problem.
+A wise person AVOIDS it. <br>
+— Albert Einstein</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/Redocly/redoc">ReDoc</a> allows us to document API
+into <a target="_blank" rel="noopener" href="https://redoc.ly/docs/resources/multi-file-definitions/">multiple file definitions</a> in standard structure and also provide CLI tool <a target="_blank" rel="noopener" href="https://github.com/Redocly/openapi-cli">@redocly/openapi-cli</a> that can use for validating definition, to generate docs and export OpenAPI definition.</p>
+<h2 id="Demo-gt-How-to-do"><a href="#Demo-gt-How-to-do" class="headerlink" title="Demo > How to do?"></a>Demo &gt; How to do?</h2><p>In this demo, we will see how to use OpenAPI and ReDoc together for documentation.</p>
+<h3 id="1-Installation"><a href="#1-Installation" class="headerlink" title="1. Installation"></a>1. Installation</h3><p>First of all, you must have <a target="_blank" rel="noopener" href="https://nodejs.org/">nodejs</a> installed on your machine. Then install <a target="_blank" rel="noopener" href="https://github.com/Redocly/create-openapi-repo">create-openapi-repo</a> globally:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g create-openapi-repo</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="2-Project-Setup"><a href="#2-Project-Setup" class="headerlink" title="2. Project Setup"></a>2. Project Setup</h3><p>Run the following command in your preferred folder to create OpenAPI multiple files and folder structure.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create-openapi-repo</span><br></pre></td></tr></tbody></table></figure>
+
+<p><em><strong>Example:</strong></em></p>
+<p><img src="/images/openapi-docs-using-redoc-1.png"></p>
+<h3 id="3-Defining-APIs"><a href="#3-Defining-APIs" class="headerlink" title="3. Defining APIs"></a>3. Defining APIs</h3><p>For example, we have to create services for user management and product management then possible APIs are the following:</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">|_**User Service**_                            | _**Product Service**_                              |</span><br><span class="line">|----------------------------------------------|----------------------------------------------------|</span><br><span class="line">| - POST `/users` to create a new user         | - POST `/products` to create a new product         |</span><br><span class="line">| - GET `/users` to get all users              | - GET `/products` to get all products              |</span><br><span class="line">| - GET `/users/{username}` to get user        | - GET `/products/{productId}` to get product       |</span><br><span class="line">| - PUT `/users/{username}` to edit user       | - PUT `/products/{productId}` to edit product      |</span><br><span class="line">| - DELETE `/users/{username}` to delete user  | - DELETE `/products/{productId}` to delete product |</span><br></pre></td></tr></tbody></table></figure>
+
+<p>API definitions using multiple files and folders structure with ReDoc:</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">openapi/</span><br><span class="line">┣ code_samples/</span><br><span class="line">┃ ┣ C#/</span><br><span class="line">┃ ┃ ┗ echo/</span><br><span class="line">┃ ┃   ┗ post.cs</span><br><span class="line">┃ ┣ PHP/</span><br><span class="line">┃ ┃ ┗ echo/</span><br><span class="line">┃ ┃   ┗ post.php</span><br><span class="line">┃ ┗ README.md</span><br><span class="line">┣ components/</span><br><span class="line">┃ ┣ headers/</span><br><span class="line">┃ ┃ ┗ PageInfo.yaml</span><br><span class="line">┃ ┣ schemas/</span><br><span class="line">┃ ┃ ┣ Email.yaml</span><br><span class="line">┃ ┃ ┣ Product.yaml</span><br><span class="line">┃ ┃ ┗ User.yaml</span><br><span class="line">┃ ┣ securitySchemes/</span><br><span class="line">┃ ┃ ┣ api_key.yaml</span><br><span class="line">┃ ┃ ┣ basic_auth.yaml</span><br><span class="line">┃ ┃ ┗ main_auth.yaml</span><br><span class="line">┃ ┗ README.md</span><br><span class="line">┣ paths/</span><br><span class="line">┃ ┣ products.yaml</span><br><span class="line">┃ ┣ products@{productId}.yaml</span><br><span class="line">┃ ┣ users.yaml</span><br><span class="line">┃ ┗ users@{username}.yaml</span><br><span class="line">┣ README.md</span><br><span class="line">┗ openapi.yaml</span><br></pre></td></tr></tbody></table></figure>
+<p>In the main <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/bhuwanupadhyay/codes/main/openapi-docs-using-redoc/openapi.yaml">openapi yaml</a> file we just need to link our separate definitions with API paths.</p>
+<figure class="highlight yaml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">paths:</span></span><br><span class="line">  <span class="string">'/users'</span><span class="string">:</span></span><br><span class="line">    <span class="string">$ref:</span> <span class="string">'paths/users.yaml'</span></span><br><span class="line">  <span class="string">'/users/{username}'</span><span class="string">:</span></span><br><span class="line">    <span class="string">$ref:</span> <span class="string">'paths/users@{username}.yaml'</span></span><br><span class="line">  <span class="string">'/products'</span><span class="string">:</span></span><br><span class="line">    <span class="string">$ref:</span> <span class="string">'paths/products.yaml'</span></span><br><span class="line">  <span class="string">'/products/{productId}'</span><span class="string">:</span></span><br><span class="line">    <span class="string">$ref:</span> <span class="string">'paths/products@{productId}.yaml'</span></span><br></pre></td></tr></tbody></table></figure>
+
+<blockquote>
+<p><em><strong>Why multiple files and folders?</strong></em></p>
+<p>If you don’t use multiple files and folders structure to manage definitions then
+you will end with the big file like <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/bhuwanupadhyay/codes/main/openapi-docs-using-redoc/dist.yaml">dist.yaml</a>.
+After looking at it, you might think it is not bad but this is a demo which has only 8 APIs
+which may not be in a real-world application. You might have 50 or 100 APIs then you will face the real problem of managing single file
+so that I recommend multiple files and folder structure to manage API definition.</p>
+<ul>
+<li>Easy to organize.</li>
+<li>Easy for development.</li>
+<li>Easy to re-use of objects to avoid duplication.</li>
+</ul>
+</blockquote>
+<h3 id="4-Lint-Build-and-Generate-Docs"><a href="#4-Lint-Build-and-Generate-Docs" class="headerlink" title="4. Lint, Build and Generate Docs"></a>4. Lint, Build and Generate Docs</h3><ul>
+<li>To Lint</li>
+</ul>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run <span class="built_in">test</span></span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>To Build</li>
+</ul>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>To Generate Docs</li>
+</ul>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run start</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="5-Source-Code-gt-Github-Link"><a href="#5-Source-Code-gt-Github-Link" class="headerlink" title="5. Source Code > Github Link"></a>5. Source Code &gt; <a target="_blank" rel="noopener" href="https://github.com/bhuwanupadhyay/codes/tree/main/openapi-docs-using-redoc">Github Link</a></h3><h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>In summary, managing a single OpenAPI definition file is a daunting task instead by using ReDoc we can organize API development in a better way, and also maintenance becomes very easy.</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/Redocly/redoc">https://github.com/Redocly/redoc</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/Redocly/openapi-cli">https://github.com/Redocly/openapi-cli</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/Redocly/create-openapi-repo">https://github.com/Redocly/create-openapi-repo</a></li>
+</ul>
+<script>
+        document.querySelectorAll('.not-gallery-item')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></div><div class="article-licensing box"><div class="licensing-title"><p>OpenAPI Docs Using ReDoc</p><p><a href="https://bhuwanupadhyay.github.io/2020/11/openapi-docs-using-redoc/">https://bhuwanupadhyay.github.io/2020/11/openapi-docs-using-redoc/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>Bhuwan Prasad Upadhyay</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2020-11-25</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="" rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/openapi/">openapi</a><a class="link-muted mr-2" rel="tag" href="/tags/redoc/">redoc</a></div><div class="sharethis-inline-share-buttons"></div><script src="//platform-api.sharethis.com/js/sharethis.js#property=612de0d0ffbeba0012edaa19&amp;product=inline-share-buttons" defer></script></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2021/08/create-and-upload-custom-server-certificate-in-aws-iam/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Create and upload custom server certificate in AWS IAM</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2020/11/spring-boot-app-using-java-code-generated-from-openapi/"><span class="level-item">Spring Boot App Using Java Code Generated From OpenAPI</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+            this.page.url = 'https://bhuwanupadhyay.github.io/2020/11/openapi-docs-using-redoc/';
+            this.page.identifier = '2020/11/openapi-docs-using-redoc/';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');  
+            s.src = '//' + 'bhuwanupadhyay' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();</script></div></div></div><!--!--><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.png" alt="CS | Blogs, FSQs, Tips &amp; Tricks, Notes" height="28"></a><p class="is-size-7"><span>&copy; 2021 Bhuwan Prasad Upadhyay</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="View on GitHub" href="https://github.com/bhuwanupadhyay"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><div id="outdated"><h6>Your browser is out-of-date!</h6><p>Update your browser to view this website correctly.&amp;npsb;<a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update my browser now </a></p><p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">×</a></p></div><script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script><script>window.addEventListener("load", function () {
+            outdatedBrowser({
+                bgColor: '#f25648',
+                color: '#ffffff',
+                lowerThan: 'object-fit' // display on IE11 or below
+            });
+        });</script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script><!-- hexo injector body_end start -->
+    <script>
+    (() => {
+        function switchTab() {
+            if (!location.hash) {
+              return;
+            }
+            Array
+                .from(document.querySelectorAll('.tab-content'))
+                .forEach($tab => {
+                    $tab.classList.add('is-hidden');
+                });
+            Array
+                .from(document.querySelectorAll('.tabs li'))
+                .forEach($tab => {
+                    $tab.classList.remove('is-active');
+                });
+            const $activeTab = document.querySelector(location.hash);
+            if ($activeTab) {
+                $activeTab.classList.remove('is-hidden');
+            }
+            const $tabMenu = document.querySelector(`a[href="${location.hash}"]`);
+            if ($tabMenu) {
+                $tabMenu.parentElement.classList.add('is-active');
+            }
+        }
+        switchTab();
+        window.addEventListener('hashchange', switchTab, false);
+    })();
+    </script>
+    <!-- hexo injector body_end end --></body></html>

@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>RSocket with Spring Boot - CS | Blogs, FSQs, Tips &amp; Tricks, Notes</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#f7f7f7"><meta name="application-name" content="CS | Blogs, FSQs, Tips &amp; Tricks, Notes"><meta name="msapplication-TileImage" content="/img/favicon.ico"><meta name="msapplication-TileColor" content="#f7f7f7"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="CS | Blogs, FSQs, Tips &amp; Tricks, Notes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="How to use RSocket in Spring Boot?"><meta property="og:type" content="blog"><meta property="og:title" content="RSocket with Spring Boot"><meta property="og:url" content="https://bhuwanupadhyay.github.io/2020/08/rsocket-with-spring-boot/"><meta property="og:site_name" content="CS | Blogs, FSQs, Tips &amp; Tricks, Notes"><meta property="og:description" content="How to use RSocket in Spring Boot?"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://bhuwanupadhyay.github.io/images/fsqs-tips-tricks-notes.png"><meta property="article:published_time" content="2020-08-17T04:23:22.921Z"><meta property="article:author" content="Bhuwan Prasad Upadhyay"><meta property="article:tag" content="rsocket"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/images/fsqs-tips-tricks-notes.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://bhuwanupadhyay.github.io/2020/08/rsocket-with-spring-boot/"},"headline":"RSocket with Spring Boot","image":["https://bhuwanupadhyay.github.io/images/fsqs-tips-tricks-notes.png"],"datePublished":"2020-08-17T04:23:22.921Z","author":{"@type":"Person","name":"Bhuwan Prasad Upadhyay"},"publisher":{"@type":"Organization","name":"CS | Blogs, FSQs, Tips & Tricks, Notes","logo":{"@type":"ImageObject","url":"https://bhuwanupadhyay.github.io/img/logo.png"}},"description":"How to use RSocket in Spring Boot?"}</script><link rel="canonical" href="https://bhuwanupadhyay.github.io/2020/08/rsocket-with-spring-boot/"><link rel="icon" href="/img/favicon.ico"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/vs2015.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><script src="https://www.googletagmanager.com/gtag/js?id=UA-177390945-1" async></script><script>window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+    
+        gtag('config', 'UA-177390945-1');</script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css"><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-1-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="CS | Blogs, FSQs, Tips &amp; Tricks, Notes" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="View on GitHub" href="https://github.com/bhuwanupadhyay"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-12"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="/images/fsqs-tips-tricks-notes.png" alt="RSocket with Spring Boot"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2020-08-17T04:23:22.921Z" title="8/17/2020, 4:23:22 AM">2020-08-17</time></span><span class="level-item"><a class="link-muted" href="/categories/Spring-Boot/">Spring Boot</a></span><span class="level-item">3 minutes read (About 448 words)</span></div></div><h1 class="title is-3 is-size-4-mobile">RSocket with Spring Boot</h1><div class="content"><p>How to use RSocket in Spring Boot?</p>
+<span id="more"></span>
+
+<h2 id="RSocket"><a href="#RSocket" class="headerlink" title="RSocket"></a>RSocket</h2><blockquote>
+<p>It is a connection-oriented, message-driven protocol with built-in flow control at the application level. It works in a browser equally as well as on a server. In fact, a web browser can serve traffic to backend microservices. It is also binary. It works equally well with text and binary data, and the payloads can be fragmented. It models all the interactions that you do in your application as network primitives. This means you can stream data or do Pub/Sub without having to setup an application queue.</p>
+<p>– <a target="_blank" rel="noopener" href="https://www.infoq.com/articles/give-rest-a-rest-rsocket/">InfoQ</a></p>
+</blockquote>
+<p>In this article, you’ll discover how to do request-response with RSocket using Spring Boot.</p>
+<h2 id="Step-1-Setup-the-Server-Code"><a href="#Step-1-Setup-the-Server-Code" class="headerlink" title="Step 1: Setup the Server Code"></a>Step 1: Setup the Server Code</h2><h3 id="The-Project-File"><a href="#The-Project-File" class="headerlink" title="The Project File"></a>The Project File</h3><p>In the project’s <code>pom.xml</code> file, you need to add the dependency for rsocket.</p>
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-rsocket<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="The-Application-Properties"><a href="#The-Application-Properties" class="headerlink" title="The Application Properties"></a>The Application Properties</h3><p>In the <code>application.properties</code> file, add the following text:</p>
+<figure class="highlight properties"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">spring.rsocket.server.port</span>=<span class="string">7000</span></span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="The-Message-Class"><a href="#The-Message-Class" class="headerlink" title="The Message Class"></a>The Message Class</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">record</span> <span class="title">Message</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="class">        @JsonProperty("source")</span> String source,</span></span><br><span class="line"><span class="class">        @<span class="title">JsonProperty</span><span class="params">("message")</span> String message,</span></span><br><span class="line"><span class="class">        @<span class="title">JsonProperty</span><span class="params">("createdAt")</span> <span class="keyword">long</span> createdAt</span></span><br><span class="line"><span class="class">) </span>{</span><br><span class="line">    Message {</span><br><span class="line">        createdAt = Instant.now().getEpochSecond();</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="The-Controller-Class"><a href="#The-Controller-Class" class="headerlink" title="The Controller Class"></a>The Controller Class</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RSocketController</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="meta">@MessageMapping("app-socket")</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Message <span class="title">appSocket</span><span class="params">(Message message)</span> </span>{</span><br><span class="line">        log.info(<span class="string">"Received request: {}"</span>, message);</span><br><span class="line">        <span class="keyword">return</span> message;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>That’s it for code. Let’s try it.</p>
+<h2 id="Step-2-Start-The-Spring-Boot-RSocket-Server"><a href="#Step-2-Start-The-Spring-Boot-RSocket-Server" class="headerlink" title="Step 2: Start The Spring Boot RSocket Server"></a>Step 2: Start The Spring Boot RSocket Server</h2><figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./mvnw clean package spring-boot:run</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="Step-4-Send-A-Command-To-The-Server-With-The-RSocket-CLI"><a href="#Step-4-Send-A-Command-To-The-Server-With-The-RSocket-CLI" class="headerlink" title="Step 4: Send A Command To The Server With The RSocket CLI"></a>Step 4: Send A Command To The Server With The RSocket CLI</h2><p>Next, download <a target="_blank" rel="noopener" href="https://github.com/making/rsc">RSocket Client CLI</a> and test cli:</p>
+<figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget -O rsc.jar https://github.com/making/rsc/releases/download/0.5.0/rsc-0.5.0.jar</span><br><span class="line"></span><br><span class="line">java -jar rsc.jar --help</span><br></pre></td></tr></tbody></table></figure>
+
+<p>Next, you’ll send a message to the running server using the RSocket client:</p>
+<figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar rsc.jar --debug --request --data "{\"source\":\"LeadByExamples\",\"message\":\"Hello, RSocket!\"}" --route app-socket tcp://localhost:7000</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="The-Client-Output"><a href="#The-Client-Output" class="headerlink" title="The Client Output"></a>The Client Output</h3><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">2020-08-17 08:14:10.584 DEBUG --- [actor-tcp-nio-1] i.r.FrameLogger : sending -&gt; </span><br><span class="line">Frame =&gt; Stream ID: 1 Type: REQUEST_RESPONSE Flags: 0b100000000 Length: 74</span><br><span class="line">Metadata:</span><br><span class="line">         +-------------------------------------------------+</span><br><span class="line">         |  0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f |</span><br><span class="line">+--------+-------------------------------------------------+----------------+</span><br><span class="line">|00000000| 0a 61 70 70 2d 73 6f 63 6b 65 74                |.app-socket     |</span><br><span class="line">+--------+-------------------------------------------------+----------------+</span><br><span class="line">Data:</span><br><span class="line">         +-------------------------------------------------+</span><br><span class="line">         |  0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f |</span><br><span class="line">+--------+-------------------------------------------------+----------------+</span><br><span class="line">|00000000| 7b 22 73 6f 75 72 63 65 22 3a 22 4c 65 61 64 42 |{"source":"LeadB|</span><br><span class="line">|00000010| 79 45 78 61 6d 70 6c 65 73 22 2c 22 6d 65 73 73 |yExamples","mess|</span><br><span class="line">|00000020| 61 67 65 22 3a 22 48 65 6c 6c 6f 2c 20 52 53 6f |age":"Hello, RSo|</span><br><span class="line">|00000030| 63 6b 65 74 22 7d                               |cket"}          |</span><br><span class="line">+--------+-------------------------------------------------+----------------+</span><br><span class="line">2020-08-17 08:14:10.657 DEBUG --- [actor-tcp-nio-1] i.r.FrameLogger : receiving -&gt; </span><br><span class="line">Frame =&gt; Stream ID: 1 Type: NEXT_COMPLETE Flags: 0b1100000 Length: 83</span><br><span class="line">Data:</span><br><span class="line">         +-------------------------------------------------+</span><br><span class="line">         |  0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f |</span><br><span class="line">+--------+-------------------------------------------------+----------------+</span><br><span class="line">|00000000| 7b 22 73 6f 75 72 63 65 22 3a 22 4c 65 61 64 42 |{"source":"LeadB|</span><br><span class="line">|00000010| 79 45 78 61 6d 70 6c 65 73 22 2c 22 6d 65 73 73 |yExamples","mess|</span><br><span class="line">|00000020| 61 67 65 22 3a 22 48 65 6c 6c 6f 2c 20 52 53 6f |age":"Hello, RSo|</span><br><span class="line">|00000030| 63 6b 65 74 22 2c 22 63 72 65 61 74 65 64 41 74 |cket","createdAt|</span><br><span class="line">|00000040| 22 3a 31 35 39 37 36 33 31 33 35 30 7d          |":1597631350}   |</span><br><span class="line">+--------+-------------------------------------------------+----------------+</span><br><span class="line">{"source":"LeadByExamples","message":"Hello, RSocket","createdAt":1597631350}</span><br></pre></td></tr></tbody></table></figure>
+<script>
+        document.querySelectorAll('.not-gallery-item')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></div><div class="article-licensing box"><div class="licensing-title"><p>RSocket with Spring Boot</p><p><a href="https://bhuwanupadhyay.github.io/2020/08/rsocket-with-spring-boot/">https://bhuwanupadhyay.github.io/2020/08/rsocket-with-spring-boot/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>Bhuwan Prasad Upadhyay</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2020-08-17</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="" rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/rsocket/">rsocket</a></div><div class="sharethis-inline-share-buttons"></div><script src="//platform-api.sharethis.com/js/sharethis.js#property=612de0d0ffbeba0012edaa19&amp;product=inline-share-buttons" defer></script></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2020/08/jpa-model-for-document-structure-entity/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">JPA Model for Document Structure Entity</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2020/08/enforce-onion-architecture-in-your-code/"><span class="level-item">Enforce onion architecture in your code</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+            this.page.url = 'https://bhuwanupadhyay.github.io/2020/08/rsocket-with-spring-boot/';
+            this.page.identifier = '2020/08/rsocket-with-spring-boot/';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');  
+            s.src = '//' + 'bhuwanupadhyay' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();</script></div></div></div><!--!--><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.png" alt="CS | Blogs, FSQs, Tips &amp; Tricks, Notes" height="28"></a><p class="is-size-7"><span>&copy; 2021 Bhuwan Prasad Upadhyay</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="View on GitHub" href="https://github.com/bhuwanupadhyay"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><div id="outdated"><h6>Your browser is out-of-date!</h6><p>Update your browser to view this website correctly.&amp;npsb;<a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update my browser now </a></p><p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">×</a></p></div><script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script><script>window.addEventListener("load", function () {
+            outdatedBrowser({
+                bgColor: '#f25648',
+                color: '#ffffff',
+                lowerThan: 'object-fit' // display on IE11 or below
+            });
+        });</script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script><!-- hexo injector body_end start -->
+    <script>
+    (() => {
+        function switchTab() {
+            if (!location.hash) {
+              return;
+            }
+            Array
+                .from(document.querySelectorAll('.tab-content'))
+                .forEach($tab => {
+                    $tab.classList.add('is-hidden');
+                });
+            Array
+                .from(document.querySelectorAll('.tabs li'))
+                .forEach($tab => {
+                    $tab.classList.remove('is-active');
+                });
+            const $activeTab = document.querySelector(location.hash);
+            if ($activeTab) {
+                $activeTab.classList.remove('is-hidden');
+            }
+            const $tabMenu = document.querySelector(`a[href="${location.hash}"]`);
+            if ($tabMenu) {
+                $tabMenu.parentElement.classList.add('is-active');
+            }
+        }
+        switchTab();
+        window.addEventListener('hashchange', switchTab, false);
+    })();
+    </script>
+    <!-- hexo injector body_end end --></body></html>

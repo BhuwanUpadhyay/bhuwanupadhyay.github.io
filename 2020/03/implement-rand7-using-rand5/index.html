@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>Implement rand7 using rand5 - CS | Blogs, FSQs, Tips &amp; Tricks, Notes</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#f7f7f7"><meta name="application-name" content="CS | Blogs, FSQs, Tips &amp; Tricks, Notes"><meta name="msapplication-TileImage" content="/img/favicon.ico"><meta name="msapplication-TileColor" content="#f7f7f7"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="CS | Blogs, FSQs, Tips &amp; Tricks, Notes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="Using a function rand5() that returns an integer from 1 to 5 (inclusive) with uniform probability, implement a function rand7() that returns an integer from 1 to 7 (inclusive)."><meta property="og:type" content="blog"><meta property="og:title" content="Implement rand7 using rand5"><meta property="og:url" content="https://bhuwanupadhyay.github.io/2020/03/implement-rand7-using-rand5/"><meta property="og:site_name" content="CS | Blogs, FSQs, Tips &amp; Tricks, Notes"><meta property="og:description" content="Using a function rand5() that returns an integer from 1 to 5 (inclusive) with uniform probability, implement a function rand7() that returns an integer from 1 to 7 (inclusive)."><meta property="og:locale" content="en_US"><meta property="og:image" content="https://bhuwanupadhyay.github.io/images/fsqs-tips-tricks-notes.png"><meta property="article:published_time" content="2020-03-20T08:53:00.000Z"><meta property="article:author" content="Bhuwan Prasad Upadhyay"><meta property="article:tag" content="algorithms"><meta property="article:tag" content="interview"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/images/fsqs-tips-tricks-notes.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://bhuwanupadhyay.github.io/2020/03/implement-rand7-using-rand5/"},"headline":"Implement rand7 using rand5","image":["https://bhuwanupadhyay.github.io/images/fsqs-tips-tricks-notes.png"],"datePublished":"2020-03-20T08:53:00.000Z","author":{"@type":"Person","name":"Bhuwan Prasad Upadhyay"},"publisher":{"@type":"Organization","name":"CS | Blogs, FSQs, Tips & Tricks, Notes","logo":{"@type":"ImageObject","url":"https://bhuwanupadhyay.github.io/img/logo.png"}},"description":"Using a function rand5() that returns an integer from 1 to 5 (inclusive) with uniform probability, implement a function rand7() that returns an integer from 1 to 7 (inclusive)."}</script><link rel="canonical" href="https://bhuwanupadhyay.github.io/2020/03/implement-rand7-using-rand5/"><link rel="icon" href="/img/favicon.ico"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/vs2015.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><script src="https://www.googletagmanager.com/gtag/js?id=UA-177390945-1" async></script><script>window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+    
+        gtag('config', 'UA-177390945-1');</script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css"><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-1-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="CS | Blogs, FSQs, Tips &amp; Tricks, Notes" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="View on GitHub" href="https://github.com/bhuwanupadhyay"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-12"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="/images/fsqs-tips-tricks-notes.png" alt="Implement rand7 using rand5"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2020-03-20T08:53:00.000Z" title="3/20/2020, 8:53:00 AM">2020-03-20</time></span><span class="level-item"><a class="link-muted" href="/categories/Coding-Problems/">Coding Problems</a></span><span class="level-item">2 minutes read (About 276 words)</span></div></div><h1 class="title is-3 is-size-4-mobile">Implement rand7 using rand5</h1><div class="content"><p>Using a function rand5() that returns an integer from 1 to 5 (inclusive) with uniform probability, implement a function rand7() that returns an integer from 1 to 7 (inclusive).</p>
+<span id="more"></span>
+
+
+<p>Do NOT use system’s Math.random()</p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Input: 2</span><br><span class="line">Output: [7,4]</span><br><span class="line"></span><br><span class="line">Input: 3</span><br><span class="line">Output: [3,1,7]</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Solution-by-Rejection-Sampling"><a href="#Solution-by-Rejection-Sampling" class="headerlink" title="Solution - by Rejection Sampling"></a>Solution - by Rejection Sampling</h2><p>This solution is based upon Rejection Sampling.</p>
+<p>The main idea is when you generate a number in the desired range, output
+that number immediately. If the number is out of the desired range, reject it and
+re-sample again. As each number in the desired range has the same
+probability of being chosen, a uniform distribution is produced.</p>
+<p>Obviously, we have to run rand5() function at least twice,
+as there are not enough numbers in the range of 1 to 7.
+By running rand5() twice, we can get integers from 1 to 25 uniformly.</p>
+<p>Since 25 is not a multiple of 7, we have to use rejection sampling.
+Our desired range is integers from 1 to 21, which we can return the answer immediately.
+If not (the integer falls between 22 to 25), we reject it and repeat the whole process again.</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> random integer 1 to 5 (inclusive) with uniform (or equal) probability</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">rand5</span><span class="params">()</span> </span>{</span><br><span class="line">        <span class="keyword">int</span> min = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> max = <span class="number">5</span>;</span><br><span class="line">        Random r = <span class="keyword">new</span> Random();</span><br><span class="line">        <span class="keyword">return</span> r.nextInt((max - min) + <span class="number">1</span>) + min;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">rand7</span><span class="params">()</span> </span>{</span><br><span class="line">        <span class="keyword">int</span> row, col, idx;</span><br><span class="line">        <span class="keyword">do</span> {</span><br><span class="line">            row = rand5();</span><br><span class="line">            col = rand5();</span><br><span class="line">            idx = col + (row - <span class="number">1</span>) * <span class="number">5</span>;</span><br><span class="line">        } <span class="keyword">while</span> (idx &gt; <span class="number">21</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span> + (idx - <span class="number">1</span>) % <span class="number">7</span>;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="Test-Cases"><a href="#Test-Cases" class="headerlink" title="Test Cases"></a>Test Cases</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SolutionTest</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Solution solution;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@BeforeEach</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">setUp</span><span class="params">()</span> </span>{</span><br><span class="line">        <span class="keyword">this</span>.solution = <span class="keyword">new</span> Solution();</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">testSolution</span><span class="params">()</span> </span>{</span><br><span class="line">        IntStream.range(<span class="number">0</span>, <span class="number">1000</span>)</span><br><span class="line">                .mapToObj(value -&gt; <span class="keyword">this</span>.solution.rand7())</span><br><span class="line">                .forEach(random -&gt; {</span><br><span class="line">                    assertTrue(</span><br><span class="line">                            random &gt; <span class="number">0</span> &amp;&amp; random &lt;= <span class="number">7</span>,</span><br><span class="line">                            String.format(<span class="string">"random number: %d -&gt; is not in range {1, 7} inclusive"</span>, random)</span><br><span class="line">                    );</span><br><span class="line">                });</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h2><ul>
+<li>Time Complexity: O(1) average, but O(∞) worst case.</li>
+<li>Space Complexity: O(1)</li>
+</ul>
+<script>
+        document.querySelectorAll('.not-gallery-item')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></div><div class="article-licensing box"><div class="licensing-title"><p>Implement rand7 using rand5</p><p><a href="https://bhuwanupadhyay.github.io/2020/03/implement-rand7-using-rand5/">https://bhuwanupadhyay.github.io/2020/03/implement-rand7-using-rand5/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>Bhuwan Prasad Upadhyay</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2020-03-20</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="" rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/algorithms/">algorithms</a><a class="link-muted mr-2" rel="tag" href="/tags/interview/">interview</a></div><div class="sharethis-inline-share-buttons"></div><script src="//platform-api.sharethis.com/js/sharethis.js#property=612de0d0ffbeba0012edaa19&amp;product=inline-share-buttons" defer></script></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2020/03/merge-sort/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Merge sort</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2020/03/generate-random-integers-in-range-using-java/"><span class="level-item">Generate random integers in range using Java</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+            this.page.url = 'https://bhuwanupadhyay.github.io/2020/03/implement-rand7-using-rand5/';
+            this.page.identifier = '2020/03/implement-rand7-using-rand5/';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');  
+            s.src = '//' + 'bhuwanupadhyay' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();</script></div></div></div><!--!--><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.png" alt="CS | Blogs, FSQs, Tips &amp; Tricks, Notes" height="28"></a><p class="is-size-7"><span>&copy; 2021 Bhuwan Prasad Upadhyay</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="View on GitHub" href="https://github.com/bhuwanupadhyay"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><div id="outdated"><h6>Your browser is out-of-date!</h6><p>Update your browser to view this website correctly.&amp;npsb;<a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update my browser now </a></p><p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">×</a></p></div><script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script><script>window.addEventListener("load", function () {
+            outdatedBrowser({
+                bgColor: '#f25648',
+                color: '#ffffff',
+                lowerThan: 'object-fit' // display on IE11 or below
+            });
+        });</script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script><!-- hexo injector body_end start -->
+    <script>
+    (() => {
+        function switchTab() {
+            if (!location.hash) {
+              return;
+            }
+            Array
+                .from(document.querySelectorAll('.tab-content'))
+                .forEach($tab => {
+                    $tab.classList.add('is-hidden');
+                });
+            Array
+                .from(document.querySelectorAll('.tabs li'))
+                .forEach($tab => {
+                    $tab.classList.remove('is-active');
+                });
+            const $activeTab = document.querySelector(location.hash);
+            if ($activeTab) {
+                $activeTab.classList.remove('is-hidden');
+            }
+            const $tabMenu = document.querySelector(`a[href="${location.hash}"]`);
+            if ($tabMenu) {
+                $tabMenu.parentElement.classList.add('is-active');
+            }
+        }
+        switchTab();
+        window.addEventListener('hashchange', switchTab, false);
+    })();
+    </script>
+    <!-- hexo injector body_end end --></body></html>

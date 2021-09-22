@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>Definition of Ready (DoR) and Definition of Done (DoD) - CS | Blogs, FSQs, Tips &amp; Tricks, Notes</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#f7f7f7"><meta name="application-name" content="CS | Blogs, FSQs, Tips &amp; Tricks, Notes"><meta name="msapplication-TileImage" content="/img/favicon.ico"><meta name="msapplication-TileColor" content="#f7f7f7"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="CS | Blogs, FSQs, Tips &amp; Tricks, Notes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="In software development, the vast majority of the bugs are the consequence of the vague stories and uneven verification of the user acceptance criteria. To lessen such bugs, the idea of “Definition of"><meta property="og:type" content="blog"><meta property="og:title" content="Definition of Ready (DoR) and Definition of Done (DoD)"><meta property="og:url" content="https://bhuwanupadhyay.github.io/2020/09/definition-of-ready-dor-and-definition-of-done-dod/"><meta property="og:site_name" content="CS | Blogs, FSQs, Tips &amp; Tricks, Notes"><meta property="og:description" content="In software development, the vast majority of the bugs are the consequence of the vague stories and uneven verification of the user acceptance criteria. To lessen such bugs, the idea of “Definition of"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://bhuwanupadhyay.github.io/images/fsqs-tips-tricks-notes.png"><meta property="article:published_time" content="2020-09-03T04:23:22.921Z"><meta property="article:author" content="Bhuwan Prasad Upadhyay"><meta property="article:tag" content="dod"><meta property="article:tag" content="dor"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/images/fsqs-tips-tricks-notes.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://bhuwanupadhyay.github.io/2020/09/definition-of-ready-dor-and-definition-of-done-dod/"},"headline":"Definition of Ready (DoR) and Definition of Done (DoD)","image":["https://bhuwanupadhyay.github.io/images/fsqs-tips-tricks-notes.png"],"datePublished":"2020-09-03T04:23:22.921Z","author":{"@type":"Person","name":"Bhuwan Prasad Upadhyay"},"publisher":{"@type":"Organization","name":"CS | Blogs, FSQs, Tips & Tricks, Notes","logo":{"@type":"ImageObject","url":"https://bhuwanupadhyay.github.io/img/logo.png"}},"description":"In software development, the vast majority of the bugs are the consequence of the vague stories and uneven verification of the user acceptance criteria. To lessen such bugs, the idea of “Definition of"}</script><link rel="canonical" href="https://bhuwanupadhyay.github.io/2020/09/definition-of-ready-dor-and-definition-of-done-dod/"><link rel="icon" href="/img/favicon.ico"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/vs2015.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><script src="https://www.googletagmanager.com/gtag/js?id=UA-177390945-1" async></script><script>window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+    
+        gtag('config', 'UA-177390945-1');</script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css"><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-1-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="CS | Blogs, FSQs, Tips &amp; Tricks, Notes" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="View on GitHub" href="https://github.com/bhuwanupadhyay"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-12"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="/images/fsqs-tips-tricks-notes.png" alt="Definition of Ready (DoR) and Definition of Done (DoD)"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2020-09-03T04:23:22.921Z" title="9/3/2020, 4:23:22 AM">2020-09-03</time></span><span class="level-item"><a class="link-muted" href="/categories/Agile/">Agile</a></span><span class="level-item">3 minutes read (About 427 words)</span></div></div><h1 class="title is-3 is-size-4-mobile">Definition of Ready (DoR) and Definition of Done (DoD)</h1><div class="content"><p>In software development, the vast majority of the bugs are the consequence of the vague stories and uneven verification of the user acceptance criteria. To lessen such bugs, the idea of “Definition of Ready (DoR)” and “Definition of Done (DoD)” is exercised in a scrum. Furthermore, DoR and DoD are methods for approving work done in agile practice based on rules set by the team for DoR/DoD. Likewise, they are frequently known as an “agile best practice”.</p>
+<span id="more"></span>
+
+<h2 id="Definition-of-Ready-DoR-Is-ready-to-build"><a href="#Definition-of-Ready-DoR-Is-ready-to-build" class="headerlink" title="Definition of Ready (DoR):  Is ready to build?"></a>Definition of Ready (DoR):  Is ready to build?</h2><blockquote>
+<p><strong>Definition of Ready</strong>, or DOR, is a set of criteria that must be satisfied in order for an Epic or a Story to be accepted by the team. The story should be instantly “actionable,” and ready to build. This happens BEFORE you build it, so you can think of this as “pre-validation.” - quora</p>
+</blockquote>
+<p>Ok! but what are the quality of a good story? For this widely used method is <strong>INVEST</strong> acronym in agile, coined by Bill Wake in his <a target="_blank" rel="noopener" href="https://xp123.com/articles/invest-in-good-stories-and-smart-tasks/">article</a>.</p>
+<p>The good story should be:</p>
+<ul>
+<li>  <strong>I</strong>  – Independent</li>
+<li>  <strong>N</strong>  – Negotiable</li>
+<li>  <strong>V</strong>  – Valuable</li>
+<li>  <strong>E</strong>  – Estimable</li>
+<li>  <strong>S</strong>  – Small</li>
+<li>  <strong>T</strong>  – Testable</li>
+</ul>
+<p><img src="https://i1.wp.com/agileety.com/wp-content/uploads/2017/03/IMG_0126.jpg?fit=2732,1920&amp;ssl=1">
+<em>Photo Credit: <a target="_blank" rel="noopener" href="https://agileety.com/definition-of-ready">agileety.com</a></em></p>
+<h2 id="Definition-of-Done-DoD-Is-ready-to-release"><a href="#Definition-of-Done-DoD-Is-ready-to-release" class="headerlink" title="Definition of Done (DoD) :  Is ready to release?"></a>Definition of Done (DoD) :  Is ready to release?</h2><blockquote>
+<p><strong>Definition of Done</strong>, or DOD, is the team’s agreement on what it means to complete a story. This happens AFTER you build it, so you can think of it as “post-validation.” - quora</p>
+</blockquote>
+<p>“Done” in an agile practice means <strong>“no more work needs to be done before shipping”</strong>. </p>
+<p><img src="https://image.slidesharecdn.com/agile-software-development-overview-1231560734008086-2/95/agile-software-development-overview-23-728.jpg?cb=1231539881">
+<em>Photo Credit: <a target="_blank" rel="noopener" href="https://www.slideshare.net/srogers74/agile-software-development-overview-presentation/23-Definition_of_Done_Is_a">slideshare.net</a></em></p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>DoR/DoD are important concepts in agile development, they help to reduce the number of bugs in production and empower the team with a common checklist to validate their work to consider tasks is really “done for PO (DoR)” and “done for Developers (DoD)”.</p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://xp123.com/articles/invest-in-good-stories-and-smart-tasks/">https://xp123.com/articles/invest-in-good-stories-and-smart-tasks/</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.scrumguides.org/scrum-guide.html#artifact-transparency-done">https://www.scrumguides.org/scrum-guide.html#artifact-transparency-done</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.quora.com/What-are-DOR-and-DOD-in-Scrum">https://www.quora.com/What-are-DOR-and-DOD-in-Scrum</a></li>
+</ul>
+<script>
+        document.querySelectorAll('.not-gallery-item')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></div><div class="article-licensing box"><div class="licensing-title"><p>Definition of Ready (DoR) and Definition of Done (DoD)</p><p><a href="https://bhuwanupadhyay.github.io/2020/09/definition-of-ready-dor-and-definition-of-done-dod/">https://bhuwanupadhyay.github.io/2020/09/definition-of-ready-dor-and-definition-of-done-dod/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>Bhuwan Prasad Upadhyay</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2020-09-03</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="" rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/dod/">dod</a><a class="link-muted mr-2" rel="tag" href="/tags/dor/">dor</a></div><div class="sharethis-inline-share-buttons"></div><script src="//platform-api.sharethis.com/js/sharethis.js#property=612de0d0ffbeba0012edaa19&amp;product=inline-share-buttons" defer></script></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2020/09/graceful-shutdown-in-spring-boot/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Graceful shutdown in Spring Boot</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2020/08/jpa-model-for-document-structure-entity/"><span class="level-item">JPA Model for Document Structure Entity</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+            this.page.url = 'https://bhuwanupadhyay.github.io/2020/09/definition-of-ready-dor-and-definition-of-done-dod/';
+            this.page.identifier = '2020/09/definition-of-ready-dor-and-definition-of-done-dod/';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');  
+            s.src = '//' + 'bhuwanupadhyay' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();</script></div></div></div><!--!--><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.png" alt="CS | Blogs, FSQs, Tips &amp; Tricks, Notes" height="28"></a><p class="is-size-7"><span>&copy; 2021 Bhuwan Prasad Upadhyay</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="View on GitHub" href="https://github.com/bhuwanupadhyay"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><div id="outdated"><h6>Your browser is out-of-date!</h6><p>Update your browser to view this website correctly.&amp;npsb;<a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update my browser now </a></p><p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">×</a></p></div><script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script><script>window.addEventListener("load", function () {
+            outdatedBrowser({
+                bgColor: '#f25648',
+                color: '#ffffff',
+                lowerThan: 'object-fit' // display on IE11 or below
+            });
+        });</script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script><!-- hexo injector body_end start -->
+    <script>
+    (() => {
+        function switchTab() {
+            if (!location.hash) {
+              return;
+            }
+            Array
+                .from(document.querySelectorAll('.tab-content'))
+                .forEach($tab => {
+                    $tab.classList.add('is-hidden');
+                });
+            Array
+                .from(document.querySelectorAll('.tabs li'))
+                .forEach($tab => {
+                    $tab.classList.remove('is-active');
+                });
+            const $activeTab = document.querySelector(location.hash);
+            if ($activeTab) {
+                $activeTab.classList.remove('is-hidden');
+            }
+            const $tabMenu = document.querySelector(`a[href="${location.hash}"]`);
+            if ($tabMenu) {
+                $tabMenu.parentElement.classList.add('is-active');
+            }
+        }
+        switchTab();
+        window.addEventListener('hashchange', switchTab, false);
+    })();
+    </script>
+    <!-- hexo injector body_end end --></body></html>

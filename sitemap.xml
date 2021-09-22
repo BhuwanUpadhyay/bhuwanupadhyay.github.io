@@ -1,0 +1,1002 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2018/08/serverless-aws-lambda-function-with-dynamo-db/</loc>
+    
+    <lastmod>2018-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2018/08/bigdecimal-to-string-in-java/</loc>
+    
+    <lastmod>2018-08-30</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2018/09/aws-lambda-load-testing-with-large-scale-data-using-gatling/</loc>
+    
+    <lastmod>2018-09-12</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2018/09/log-aggregation-for-aws-lambda/</loc>
+    
+    <lastmod>2018-09-13</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2018/10/enable-elastic-apm-in-spring-boot-application/</loc>
+    
+    <lastmod>2018-10-06</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2018/10/performance-benchmarking-with-tomcat/</loc>
+    
+    <lastmod>2018-10-07</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2020/01/how-to-create-binary-tree-in-java/</loc>
+    
+    <lastmod>2020-01-05</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2020/01/find-the-vertical-sum-of-binary-tree/</loc>
+    
+    <lastmod>2020-01-07</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2020/01/find-the-maximum-width-of-binary-tree/</loc>
+    
+    <lastmod>2020-01-17</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2020/01/secure-application-secrets-by-using-spring-vault/</loc>
+    
+    <lastmod>2020-01-18</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2020/01/how-to-use-jmh-with-spring-boot/</loc>
+    
+    <lastmod>2020-01-20</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2020/02/determine-time-complexity-of-algorithms/</loc>
+    
+    <lastmod>2020-02-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2020/03/highly-scalable-database-designs/</loc>
+    
+    <lastmod>2020-03-08</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2020/03/find-the-longest-palindromic-contiguous-substring/</loc>
+    
+    <lastmod>2020-03-20</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2020/03/generate-random-integers-in-range-using-java/</loc>
+    
+    <lastmod>2020-03-20</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2020/03/implement-rand7-using-rand5/</loc>
+    
+    <lastmod>2020-03-20</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2020/03/merge-sort/</loc>
+    
+    <lastmod>2020-03-20</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2020/03/implement-a-url-shortener-with-alphanumeric-string/</loc>
+    
+    <lastmod>2020-03-28</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2020/04/applying-semantic-versioning-with-git-repository/</loc>
+    
+    <lastmod>2020-04-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2020/05/domain-driven-design-building-blocks/</loc>
+    
+    <lastmod>2020-05-02</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2020/05/safely-exchanging-information-across-microservices/</loc>
+    
+    <lastmod>2020-05-09</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2020/06/minikube-setup-and-helm-deployment/</loc>
+    
+    <lastmod>2020-06-16</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2020/06/expose-spring-boot-microservice-with-ingress-using-helm/</loc>
+    
+    <lastmod>2020-06-17</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2020/06/configmap-in-spring-cloud-kubernetes/</loc>
+    
+    <lastmod>2020-06-19</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2020/06/semantic-versioning-on-docker-build-and-helm-chart/</loc>
+    
+    <lastmod>2020-06-22</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2020/06/spring-boot-docker-containerization/</loc>
+    
+    <lastmod>2020-06-23</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2020/07/ssl-in-spring-boot-application/</loc>
+    
+    <lastmod>2020-07-06</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2020/08/highlight-of-jdk-15-features/</loc>
+    
+    <lastmod>2020-08-03</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2020/08/error-handler-with-resttemplate/</loc>
+    
+    <lastmod>2020-08-13</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2020/08/enforce-onion-architecture-in-your-code/</loc>
+    
+    <lastmod>2020-08-14</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2020/08/rsocket-with-spring-boot/</loc>
+    
+    <lastmod>2020-08-17</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2020/08/jpa-model-for-document-structure-entity/</loc>
+    
+    <lastmod>2020-08-18</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2020/09/graceful-shutdown-in-spring-boot/</loc>
+    
+    <lastmod>2020-09-03</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2020/09/definition-of-ready-dor-and-definition-of-done-dod/</loc>
+    
+    <lastmod>2020-09-03</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2020/10/how-to-setup-elk-stack-in-docker/</loc>
+    
+    <lastmod>2020-10-16</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2020/11/spring-boot-app-using-java-code-generated-from-openapi/</loc>
+    
+    <lastmod>2020-11-19</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2020/11/openapi-docs-using-redoc/</loc>
+    
+    <lastmod>2020-11-25</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2021/08/create-and-upload-custom-server-certificate-in-aws-iam/</loc>
+    
+    <lastmod>2021-08-10</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2021/08/convert-text-to-speech-using-google-text-to-speech-gtts-library/</loc>
+    
+    <lastmod>2021-08-30</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2021/09/how-to-add-qr-code-on-pdf-using-java/</loc>
+    
+    <lastmod>2021-09-14</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2021/09/how-to-convert-java-object-to-properties-format/</loc>
+    
+    <lastmod>2021-09-14</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/2021/09/how-to-split-string-in-bash-script/</loc>
+    
+    <lastmod>2021-09-22</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/about/index.html</loc>
+    
+    <lastmod>2021-09-22</lastmod>
+    
+  </url>
+  
+
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/awslambda/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/dynamodb/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/big-decimal/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/load-testing/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/gatling/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/logging/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/elastic-apm/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/monitoring/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/tomcat/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/binary-tree/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/maximum-width/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/spring-cloud-vault/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/security/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/jmh/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/time-complexity/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/algorithms/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/scalable-database-designs/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/postgres-replication/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/interview/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/random/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/merge-sort/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/alphanumeric-random/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/git/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/semantic-release/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/value-object/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/entity/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/aggregate-root/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/repository/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/factory/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/domain-service/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/spring-cloud-stream/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/avro-schema/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/schema-registry/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/minikube/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/helm/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/kubernetes/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/ingress/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/configmap/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/docker/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/semantic-versioning/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/containerization/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/ssl/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/wireshark/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/java15/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/sealed-classes/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/local-types/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/rest-template/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/error-handler/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/architecture-testing/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/rsocket/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/json/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/document/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/mapping/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/graceful-shutdown/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/dod/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/dor/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/elasticsearch/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/kibana/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/logstash/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/spring-boot/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/openapi/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/redoc/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/aws/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/iam/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/server-certificate/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/text-to-speech/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/gTTS/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/python/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/zxing/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/qr-code/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/java/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/java-to-props/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/faster-xml/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/tags/split-sting-bash-script/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/categories/Serverless/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/categories/Java/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/categories/Spring-Boot/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/categories/Coding-Problems/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/categories/Spring-Cloud/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/categories/Microservices/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/categories/Semantic-Versioning/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/categories/Domain-Driven-Design/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/categories/Minikube/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/categories/Java15/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/categories/Spring/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/categories/ArchUnit/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/categories/JPA/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/categories/Agile/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/categories/ELK/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/categories/OpenAPI/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/categories/AWS/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/categories/gTTS/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/categories/QR-Code/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/categories/FasterXML/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/categories/Bash/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/categories/OpenAPI/Spring-Boot/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/categories/OpenAPI/ReDoc/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://bhuwanupadhyay.github.io/categories/AWS/SSL/</loc>
+    <lastmod>2021-09-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+</urlset>

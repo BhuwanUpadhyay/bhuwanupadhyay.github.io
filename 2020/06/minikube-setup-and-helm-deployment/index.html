@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>Minikube Setup and Helm Deployment - CS | Blogs, FSQs, Tips &amp; Tricks, Notes</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#f7f7f7"><meta name="application-name" content="CS | Blogs, FSQs, Tips &amp; Tricks, Notes"><meta name="msapplication-TileImage" content="/img/favicon.ico"><meta name="msapplication-TileColor" content="#f7f7f7"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="CS | Blogs, FSQs, Tips &amp; Tricks, Notes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="To run a Kubernetes cluster in your local machine and try our Kubernetes capabilities you can use Minikube. In this article, I will explain how to setup k8s command-line tools like kubectl minikube he"><meta property="og:type" content="blog"><meta property="og:title" content="Minikube Setup and Helm Deployment"><meta property="og:url" content="https://bhuwanupadhyay.github.io/2020/06/minikube-setup-and-helm-deployment/"><meta property="og:site_name" content="CS | Blogs, FSQs, Tips &amp; Tricks, Notes"><meta property="og:description" content="To run a Kubernetes cluster in your local machine and try our Kubernetes capabilities you can use Minikube. In this article, I will explain how to setup k8s command-line tools like kubectl minikube he"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://bhuwanupadhyay.github.io/images/fsqs-tips-tricks-notes.png"><meta property="article:published_time" content="2020-06-16T11:35:00.000Z"><meta property="article:author" content="Bhuwan Prasad Upadhyay"><meta property="article:tag" content="minikube"><meta property="article:tag" content="helm"><meta property="article:tag" content="kubernetes"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/images/fsqs-tips-tricks-notes.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://bhuwanupadhyay.github.io/2020/06/minikube-setup-and-helm-deployment/"},"headline":"Minikube Setup and Helm Deployment","image":["https://bhuwanupadhyay.github.io/images/fsqs-tips-tricks-notes.png"],"datePublished":"2020-06-16T11:35:00.000Z","author":{"@type":"Person","name":"Bhuwan Prasad Upadhyay"},"publisher":{"@type":"Organization","name":"CS | Blogs, FSQs, Tips & Tricks, Notes","logo":{"@type":"ImageObject","url":"https://bhuwanupadhyay.github.io/img/logo.png"}},"description":"To run a Kubernetes cluster in your local machine and try our Kubernetes capabilities you can use Minikube. In this article, I will explain how to setup k8s command-line tools like kubectl minikube he"}</script><link rel="canonical" href="https://bhuwanupadhyay.github.io/2020/06/minikube-setup-and-helm-deployment/"><link rel="icon" href="/img/favicon.ico"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/vs2015.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><script src="https://www.googletagmanager.com/gtag/js?id=UA-177390945-1" async></script><script>window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+    
+        gtag('config', 'UA-177390945-1');</script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css"><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-1-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="CS | Blogs, FSQs, Tips &amp; Tricks, Notes" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="View on GitHub" href="https://github.com/bhuwanupadhyay"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-12"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="/images/fsqs-tips-tricks-notes.png" alt="Minikube Setup and Helm Deployment"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2020-06-16T11:35:00.000Z" title="6/16/2020, 11:35:00 AM">2020-06-16</time></span><span class="level-item"><a class="link-muted" href="/categories/Minikube/">Minikube</a></span><span class="level-item">2 minutes read (About 300 words)</span></div></div><h1 class="title is-3 is-size-4-mobile">Minikube Setup and Helm Deployment</h1><div class="content"><p>To run a Kubernetes cluster in your local machine and try our Kubernetes capabilities you can use Minikube. In this article, I will explain how to setup k8s command-line tools like <code>kubectl</code> <code>minikube</code> <code>helm</code>.</p>
+<span id="more"></span>
+
+<h2 id="Setup-k8s-tools"><a href="#Setup-k8s-tools" class="headerlink" title="Setup k8s tools"></a>Setup k8s tools</h2><hr>
+<h3 id="kubectl"><a href="#kubectl" class="headerlink" title="kubectl"></a>kubectl</h3><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Download</span></span><br><span class="line">curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Make the kubectl binary executable</span></span><br><span class="line">chmod +x ./kubectl</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Move the binary <span class="keyword">in</span> to your PATH</span></span><br><span class="line">sudo mv ./kubectl /usr/local/bin/kubectl</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Verify <span class="built_in">command</span></span></span><br><span class="line">kubectl version</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="minikube"><a href="#minikube" class="headerlink" title="minikube"></a>minikube</h3><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Download</span></span><br><span class="line">curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Move the binary into your PATH</span></span><br><span class="line">sudo install minikube-linux-amd64 /usr/local/bin/minikube</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Verify <span class="built_in">command</span></span></span><br><span class="line">minikube version</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="helm"><a href="#helm" class="headerlink" title="helm"></a>helm</h3><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> Install</span></span><br><span class="line">sudo snap install helm --classic</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Verify <span class="built_in">command</span></span></span><br><span class="line">helm version</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="Helm-Deployment"><a href="#Helm-Deployment" class="headerlink" title="Helm Deployment"></a>Helm Deployment</h2><hr>
+<h3 id="Create-a-helm-project"><a href="#Create-a-helm-project" class="headerlink" title="Create a helm project"></a>Create a helm project</h3><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">helm create my-project</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Deploying-using-helm"><a href="#Deploying-using-helm" class="headerlink" title="Deploying using helm"></a>Deploying using helm</h3><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">minikube start</span><br><span class="line"></span><br><span class="line">kubectl config use-context minikube</span><br><span class="line"></span><br><span class="line">helm dependency update my-project</span><br><span class="line"></span><br><span class="line">helm upgrade --install -f my-project/values.yaml deployment-name my-project  --force</span><br><span class="line"></span><br><span class="line">kubectl get pods</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Delete-helm-deployment"><a href="#Delete-helm-deployment" class="headerlink" title="Delete helm deployment"></a>Delete helm deployment</h3><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">helm delete deployment-name</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="Commands"><a href="#Commands" class="headerlink" title="Commands"></a>Commands</h2><hr>
+<h3 id="Useful-Minikube-commands"><a href="#Useful-Minikube-commands" class="headerlink" title="Useful Minikube commands"></a>Useful Minikube commands</h3><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">minikube status       # See if Minikube is running</span><br><span class="line">minikube start        # Create and start Minikube</span><br><span class="line">minikube dashboard    # Access the Kubernetes dashboard running within the Minikube cluster</span><br><span class="line">minikube ssh          # Login into the Minikube VM</span><br><span class="line">minikube addons list  # Show the status of the available add-ons</span><br><span class="line">minikube stop         # Stop Minikube</span><br><span class="line">minikube delete       # Delete the Minikube VM</span><br><span class="line">minikube ip           # Show the Minikube IP</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Useful-Helm-commands"><a href="#Useful-Helm-commands" class="headerlink" title="Useful Helm commands"></a>Useful Helm commands</h3><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">helm init           # Initialize helm</span><br><span class="line">helm create         # Create helm chart</span><br><span class="line">helm install        # Install helm deployment</span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li>https://kubernetes.io/docs/setup/learning-environment/minikube/</li>
+<li>https://helm.sh/docs/intro/install/</li>
+<li>https://helm.sh/docs/helm/</li>
+<li>https://kubernetes.io/docs/tasks/tools/install-kubectl/</li>
+</ul>
+<script>
+        document.querySelectorAll('.not-gallery-item')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></div><div class="article-licensing box"><div class="licensing-title"><p>Minikube Setup and Helm Deployment</p><p><a href="https://bhuwanupadhyay.github.io/2020/06/minikube-setup-and-helm-deployment/">https://bhuwanupadhyay.github.io/2020/06/minikube-setup-and-helm-deployment/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>Bhuwan Prasad Upadhyay</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2020-06-16</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="" rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/minikube/">minikube</a><a class="link-muted mr-2" rel="tag" href="/tags/helm/">helm</a><a class="link-muted mr-2" rel="tag" href="/tags/kubernetes/">kubernetes</a></div><div class="sharethis-inline-share-buttons"></div><script src="//platform-api.sharethis.com/js/sharethis.js#property=612de0d0ffbeba0012edaa19&amp;product=inline-share-buttons" defer></script></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2020/06/expose-spring-boot-microservice-with-ingress-using-helm/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Expose spring boot microservice with ingress using helm</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2020/05/safely-exchanging-information-across-microservices/"><span class="level-item">Safely Exchanging Information Across Microservices</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+            this.page.url = 'https://bhuwanupadhyay.github.io/2020/06/minikube-setup-and-helm-deployment/';
+            this.page.identifier = '2020/06/minikube-setup-and-helm-deployment/';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');  
+            s.src = '//' + 'bhuwanupadhyay' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();</script></div></div></div><!--!--><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.png" alt="CS | Blogs, FSQs, Tips &amp; Tricks, Notes" height="28"></a><p class="is-size-7"><span>&copy; 2021 Bhuwan Prasad Upadhyay</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="View on GitHub" href="https://github.com/bhuwanupadhyay"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><div id="outdated"><h6>Your browser is out-of-date!</h6><p>Update your browser to view this website correctly.&amp;npsb;<a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update my browser now </a></p><p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">×</a></p></div><script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script><script>window.addEventListener("load", function () {
+            outdatedBrowser({
+                bgColor: '#f25648',
+                color: '#ffffff',
+                lowerThan: 'object-fit' // display on IE11 or below
+            });
+        });</script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script><!-- hexo injector body_end start -->
+    <script>
+    (() => {
+        function switchTab() {
+            if (!location.hash) {
+              return;
+            }
+            Array
+                .from(document.querySelectorAll('.tab-content'))
+                .forEach($tab => {
+                    $tab.classList.add('is-hidden');
+                });
+            Array
+                .from(document.querySelectorAll('.tabs li'))
+                .forEach($tab => {
+                    $tab.classList.remove('is-active');
+                });
+            const $activeTab = document.querySelector(location.hash);
+            if ($activeTab) {
+                $activeTab.classList.remove('is-hidden');
+            }
+            const $tabMenu = document.querySelector(`a[href="${location.hash}"]`);
+            if ($tabMenu) {
+                $tabMenu.parentElement.classList.add('is-active');
+            }
+        }
+        switchTab();
+        window.addEventListener('hashchange', switchTab, false);
+    })();
+    </script>
+    <!-- hexo injector body_end end --></body></html>

@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>SSL in spring boot application - CS | Blogs, FSQs, Tips &amp; Tricks, Notes</title><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#f7f7f7"><meta name="application-name" content="CS | Blogs, FSQs, Tips &amp; Tricks, Notes"><meta name="msapplication-TileImage" content="/img/favicon.ico"><meta name="msapplication-TileColor" content="#f7f7f7"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="CS | Blogs, FSQs, Tips &amp; Tricks, Notes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="How to enable SSL in Spring Boot?"><meta property="og:type" content="blog"><meta property="og:title" content="SSL in spring boot application"><meta property="og:url" content="https://bhuwanupadhyay.github.io/2020/07/ssl-in-spring-boot-application/"><meta property="og:site_name" content="CS | Blogs, FSQs, Tips &amp; Tricks, Notes"><meta property="og:description" content="How to enable SSL in Spring Boot?"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://bhuwanupadhyay.github.io/images/fsqs-tips-tricks-notes.png"><meta property="article:published_time" content="2020-07-06T04:23:22.921Z"><meta property="article:author" content="Bhuwan Prasad Upadhyay"><meta property="article:tag" content="ssl"><meta property="article:tag" content="wireshark"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/images/fsqs-tips-tricks-notes.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://bhuwanupadhyay.github.io/2020/07/ssl-in-spring-boot-application/"},"headline":"SSL in spring boot application","image":["https://bhuwanupadhyay.github.io/images/fsqs-tips-tricks-notes.png"],"datePublished":"2020-07-06T04:23:22.921Z","author":{"@type":"Person","name":"Bhuwan Prasad Upadhyay"},"publisher":{"@type":"Organization","name":"CS | Blogs, FSQs, Tips & Tricks, Notes","logo":{"@type":"ImageObject","url":"https://bhuwanupadhyay.github.io/img/logo.png"}},"description":"How to enable SSL in Spring Boot?"}</script><link rel="canonical" href="https://bhuwanupadhyay.github.io/2020/07/ssl-in-spring-boot-application/"><link rel="icon" href="/img/favicon.ico"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/vs2015.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><script src="https://www.googletagmanager.com/gtag/js?id=UA-177390945-1" async></script><script>window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+    
+        gtag('config', 'UA-177390945-1');</script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css"><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.0"></head><body class="is-1-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.png" alt="CS | Blogs, FSQs, Tips &amp; Tricks, Notes" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="View on GitHub" href="https://github.com/bhuwanupadhyay"><i class="fab fa-github"></i></a><a class="navbar-item search" title="Search" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-12"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="/images/fsqs-tips-tricks-notes.png" alt="SSL in spring boot application"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2020-07-06T04:23:22.921Z" title="7/6/2020, 4:23:22 AM">2020-07-06</time></span><span class="level-item"><a class="link-muted" href="/categories/Spring-Boot/">Spring Boot</a></span><span class="level-item">6 minutes read (About 954 words)</span></div></div><h1 class="title is-3 is-size-4-mobile">SSL in spring boot application</h1><div class="content"><p>How to enable SSL in Spring Boot?</p>
+<span id="more"></span> 
+
+<blockquote>
+<p>Secure Sockets Layer, is an encryption-based Internet security protocol. The primary reason why SSL is used is to keep sensitive information sent across the Internet encrypted so that only the intended recipient can access it. This is important because the information you send on the Internet is passed from computer to computer to get to the destination server. Any computer in between you and the server can see your credit card numbers, usernames and passwords, and other sensitive information if it is not encrypted with an SSL certificate. When an SSL certificate is used, the information becomes unreadable to everyone except for the server you are sending the information to. This protects it from hackers and identity thieves. </p>
+<p>-« <a target="_blank" rel="noopener" href="https://www.sslshopper.com/why-ssl-the-purpose-of-using-ssl-certificates.html">sslshopper.com</a> »-</p>
+</blockquote>
+<h2 id="How-to-hack-SSL-less-Spring-Boot-Application"><a href="#How-to-hack-SSL-less-Spring-Boot-Application" class="headerlink" title="How to hack SSL less Spring Boot Application?"></a>How to hack SSL less Spring Boot Application?</h2><p>Let’s create a simple spring boot application that will have a <code>POST</code> method to create an order and <code>GET</code> method to get orders.</p>
+<ul>
+<li>Run the following to create order microservice spring boot application:</li>
+</ul>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl https://start.spring.io/starter.tgz -d dependencies=actuator,webflux -d language=java -d platformVersion=2.3.1.RELEASE -d javaVersion=14 -d baseDir=ssl-in-spring-boot-application | tar -xzvf -</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>Create <code>OrderController.java</code> and add the following text:</li>
+</ul>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">record</span> <span class="title">Order</span><span class="params">(@JsonProperty("item")</span>String item,</span></span><br><span class="line"><span class="class">             @<span class="title">JsonProperty</span><span class="params">("quantity")</span>Integer quantity) </span>{</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> Order {</span><br><span class="line">        <span class="keyword">if</span> (quantity &lt; <span class="number">1</span>) {</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"Quantity should be positive number."</span>);</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OrderController</span> </span>{</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> List&lt;Order&gt; orders = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="meta">@PostMapping("/orders")</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Order <span class="title">create</span><span class="params">(<span class="meta">@RequestBody</span> <span class="keyword">final</span> Order request)</span> </span>{</span><br><span class="line">        <span class="keyword">this</span>.orders.add(request);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.orders.get(<span class="keyword">this</span>.orders.size() - <span class="number">1</span>);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping("/orders")</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Order&gt; <span class="title">findAll</span><span class="params">()</span> </span>{</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.orders;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>To start the application simply run the command: <code>mvn spring-boot:run</code> and verify with the command: <code>http :8080/actuator/health</code>.</p>
+<p><em><strong>Hack Time!</strong></em></p>
+<blockquote>
+<p>Wireshark is the widely-used network protocol analyzer. It lets you see what’s happening on your network at a microscopic level. </p>
+<p>-« <a target="_blank" rel="noopener" href="https://www.wireshark.org/">wireshark.org</a> »-</p>
+</blockquote>
+<p>Go through the following command and steps to install Wireshark in ubuntu.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. Add ppa repository and install</span></span><br><span class="line">sudo add-apt-repository ppa:wireshark-dev/stable</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install wireshark</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. Should non-superusers be able to capture packets? - Yes</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. Give permission</span></span><br><span class="line">sudo chmod +x /usr/bin/dumpcap</span><br><span class="line"><span class="comment"># 4. Logout and login again</span></span><br><span class="line"><span class="comment"># 5. Launch wireshark</span></span><br><span class="line">wireshark</span><br></pre></td></tr></tbody></table></figure>
+
+<p>In the Wireshark window select <code>Loopback: lo</code> interface, right-click on it, and hit <code>Start capture</code> option. As a result, Wireshark started to capture all network packets but we need data that is transferring between the Spring Boot server (in port 8080) and <a target="_blank" rel="noopener" href="https://httpie.org/">httpie</a> client to get it we have to filter <code>tcp.port == 8080</code> and hit enter.</p>
+<p>Now, let’s make <code>POST</code> http request on localhost 8080.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'{"item": "hack-item", "quantity": 20}'</span> | http POST :8080/orders</span><br></pre></td></tr></tbody></table></figure>
+
+<p>Go back to Wireshark you will see a list of packets that is captured when you make this request. Among them, select <code>POST /orders</code>, right-click on it and select  <code>Follow -&gt; TCP Stream</code> and you will see all values that were sent by the client on this request. The output looks like below:</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">POST /orders HTTP/1.1</span><br><span class="line">Host: localhost:8080</span><br><span class="line">User-Agent: HTTPie/0.9.8</span><br><span class="line">Accept-Encoding: gzip, deflate</span><br><span class="line">Accept: application/json, */*</span><br><span class="line">Connection: keep-alive</span><br><span class="line">Content-Type: application/json</span><br><span class="line">Content-Length: 38</span><br><span class="line"></span><br><span class="line">{"item": "hack-item", "quantity": 20}</span><br><span class="line">HTTP/1.1 200 OK</span><br><span class="line">Content-Type: application/json</span><br><span class="line">Content-Length: 34</span><br><span class="line"></span><br><span class="line">{"item":"hack-item","quantity":20}</span><br></pre></td></tr></tbody></table></figure>
+
+<hr>
+<h2 id="SSL-in-Spring-Boot"><a href="#SSL-in-Spring-Boot" class="headerlink" title="SSL in Spring Boot"></a>SSL in Spring Boot</h2><p>Spring Boot provides a set of a declarative <a target="_blank" rel="noopener" href="https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-configure-ssl">server.ssl.* properties</a>. We can use those properties to configure HTTPS.</p>
+<h3 id="Self-signed-Certificate"><a href="#Self-signed-Certificate" class="headerlink" title="Self-signed Certificate"></a>Self-signed Certificate</h3><p>The tools like <a target="_blank" rel="noopener" href="https://www.openssl.org/">OpenSSL</a>, <a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/8/docs/technotes/tools/unix/keytool.html">Keytool</a>, etc. helps to generate a self-signed certificate. For example, to generate a key store (key bag) with keytool:</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">keytool -genkey \</span><br><span class="line">          -<span class="built_in">alias</span> Spring Boot \</span><br><span class="line">          -storetype PKCS12 \</span><br><span class="line">          -keyalg RSA \</span><br><span class="line">          -keysize 2048 \</span><br><span class="line">          -keystore keystore.p12 \</span><br><span class="line">          -validity 4000</span><br></pre></td></tr></tbody></table></figure>
+
+<p>Here, we store the keys using <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/PKCS_12">PKCS #12</a> which is like a collection of keys such as private keys and public key certifications. We can look inside our generated keystore (keystore.p12) with OpenSSL.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl pkcs12 -info -<span class="keyword">in</span> keystore.p12</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="Enable-HTTPS"><a href="#Enable-HTTPS" class="headerlink" title="Enable HTTPS"></a>Enable HTTPS</h3><p>You should copy your generated keystore.p12 and create new <code>application-ssl.properties</code> file in your Spring boot application resources with follwing text:</p>
+<figure class="highlight properties"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">server.port</span>=<span class="string">8443</span></span><br><span class="line"><span class="meta">server.ssl.key-store</span>=<span class="string">classpath:keystore.p12</span></span><br><span class="line"><span class="meta">server.ssl.key-store-password</span>=<span class="string">mypass</span></span><br><span class="line"><span class="meta">server.ssl.keyStoreType</span>=<span class="string">PKCS12</span></span><br><span class="line"><span class="meta">server.ssl.keyAlias</span>=<span class="string">Spring Boot</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>Again, you need to start the application for this simply run the command: <code>mvn spring-boot:run -Dspring-boot.run.profiles=ssl</code> and verify with the command: <code>http --verify=no https://localhost:8443/actuator/health</code>.</p>
+<p><em><strong>Hack Time!</strong></em></p>
+<p>This time we have to add a filter in Wireshark <code>tcp.port == 8443</code> and hit enter.</p>
+<p>Now, let’s make <code>POST</code> http request on localhost 8080.</p>
+<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">'{"item": "hack-item", "quantity": 20}'</span> | http --verify=no POST https://localhost:8443/orders</span><br></pre></td></tr></tbody></table></figure>
+
+<p>Go back to Wireshark you will see a list of packets that is captured when you make this request. Among them select <code>Application Data</code>, right-click on it, and select  <code>Follow -&gt; TCP Stream</code> and you will see encrypted values that were sent by the client on this request. The output looks like below:</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">...........XP4..1.'</span><br><span class="line">.....U....... X..U.w:.. .b.e..."....G...".........M.z..J.V.......,.0.+./...................$.(.#.'.</span><br><span class="line">...    ...........k.g.9.3.............=.&lt;.5./.....]........    localhost.........</span><br><span class="line">........ &lt;more&gt;....</span><br></pre></td></tr></tbody></table></figure>
+
+
+<h2 id="That’s-all-folks"><a href="#That’s-all-folks" class="headerlink" title="That’s all folks."></a>That’s all folks.</h2><p>Thanks for reading! Code example on <a target="_blank" rel="noopener" href="https://github.com/BhuwanUpadhyay/ssl-in-spring-boot-application">Github</a>.</p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li>https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-configure-ssl</li>
+<li>https://www.sslshopper.com/why-ssl-the-purpose-of-using-ssl-certificates.html</li>
+<li>https://www.youtube.com/watch?v=r0l_54thSYU</li>
+<li>https://wiki.wireshark.org/CaptureSetup/Loopback</li>
+</ul>
+<script>
+        document.querySelectorAll('.not-gallery-item')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></div><div class="article-licensing box"><div class="licensing-title"><p>SSL in spring boot application</p><p><a href="https://bhuwanupadhyay.github.io/2020/07/ssl-in-spring-boot-application/">https://bhuwanupadhyay.github.io/2020/07/ssl-in-spring-boot-application/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>Author</h6><p>Bhuwan Prasad Upadhyay</p></div></div><div class="level-item is-narrow"><div><h6>Posted on</h6><p>2020-07-06</p></div></div><div class="level-item is-narrow"><div><h6>Licensed under</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="" rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/ssl/">ssl</a><a class="link-muted mr-2" rel="tag" href="/tags/wireshark/">wireshark</a></div><div class="sharethis-inline-share-buttons"></div><script src="//platform-api.sharethis.com/js/sharethis.js#property=612de0d0ffbeba0012edaa19&amp;product=inline-share-buttons" defer></script></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2020/08/highlight-of-jdk-15-features/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Highlight of Jdk 15 Features</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2020/06/spring-boot-docker-containerization/"><span class="level-item">Spring Boot Docker Containerization</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">Comments</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+            this.page.url = 'https://bhuwanupadhyay.github.io/2020/07/ssl-in-spring-boot-application/';
+            this.page.identifier = '2020/07/ssl-in-spring-boot-application/';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');  
+            s.src = '//' + 'bhuwanupadhyay' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();</script></div></div></div><!--!--><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.png" alt="CS | Blogs, FSQs, Tips &amp; Tricks, Notes" height="28"></a><p class="is-size-7"><span>&copy; 2021 Bhuwan Prasad Upadhyay</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="View on GitHub" href="https://github.com/bhuwanupadhyay"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="Back to top" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "This website uses cookies to improve your experience.",
+          dismiss: "Got it!",
+          allow: "Allow cookies",
+          deny: "Decline",
+          link: "Learn more",
+          policy: "Cookie Policy",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><div id="outdated"><h6>Your browser is out-of-date!</h6><p>Update your browser to view this website correctly.&amp;npsb;<a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update my browser now </a></p><p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">×</a></p></div><script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script><script>window.addEventListener("load", function () {
+            outdatedBrowser({
+                bgColor: '#f25648',
+                color: '#ffffff',
+                lowerThan: 'object-fit' // display on IE11 or below
+            });
+        });</script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="Type something..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"Type something...","untitled":"(Untitled)","posts":"Posts","pages":"Pages","categories":"Categories","tags":"Tags"});
+        });</script><!-- hexo injector body_end start -->
+    <script>
+    (() => {
+        function switchTab() {
+            if (!location.hash) {
+              return;
+            }
+            Array
+                .from(document.querySelectorAll('.tab-content'))
+                .forEach($tab => {
+                    $tab.classList.add('is-hidden');
+                });
+            Array
+                .from(document.querySelectorAll('.tabs li'))
+                .forEach($tab => {
+                    $tab.classList.remove('is-active');
+                });
+            const $activeTab = document.querySelector(location.hash);
+            if ($activeTab) {
+                $activeTab.classList.remove('is-hidden');
+            }
+            const $tabMenu = document.querySelector(`a[href="${location.hash}"]`);
+            if ($tabMenu) {
+                $tabMenu.parentElement.classList.add('is-active');
+            }
+        }
+        switchTab();
+        window.addEventListener('hashchange', switchTab, false);
+    })();
+    </script>
+    <!-- hexo injector body_end end --></body></html>
